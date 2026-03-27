@@ -1,24 +1,29 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { IMAGES } from "./images";
+import { FullMenuModal } from "./FullMenuModal";
 
 /* ═══════════════════════════════════════════════
-   SIGNATURE DISHES SECTION
-   Premium dish cards with hover effects and
-   glass-morphism styling.
+   SIGNATURE DISHES SECTION — Michelin Edition
+   Magazine-editorial spread layout.
+   Less card-like, more spread/feature style.
+   Dramatic category labels, cinematic imagery.
    ═══════════════════════════════════════════════ */
 
 const DISHES = [
   {
     name: "Ribeye a la Brasa",
     description:
-      "Corte USDA Prime de 400g, madurado 28 dias. Sellado sobre brasa de encino y servido con reduccion de vino tinto y vegetales de temporada.",
+      "Corte USDA Prime de 400g, madurado 28 días. Sellado sobre brasa de encino y servido con reducción de vino tinto y vegetales de temporada.",
     category: "Cortes Premium",
     image: IMAGES.dish1,
   },
   {
-    name: "Salmon en Costra de Hierbas",
+    name: "Salmón en Costra de Hierbas",
     description:
-      "Filete de salmon del Atlantico con costra de hierbas finas, sobre puree de coliflor trufado y espuma de limon Meyer.",
+      "Filete de salmón del Atlántico con costra de hierbas finas, sobre puré de coliflor trufado y espuma de limón Meyer.",
     category: "Mar",
     image: IMAGES.dish2,
   },
@@ -32,104 +37,137 @@ const DISHES = [
   {
     name: "Tasting de la Casa",
     description:
-      "Experiencia de cinco tiempos maridada con nuestra seleccion de vinos. Un recorrido por los sabores insignia de PUA.",
+      "Experiencia de cinco tiempos maridada con nuestra selección de vinos. Un recorrido por los sabores insignia de PÚA.",
     category: "Experiencia",
     image: IMAGES.dish4,
   },
 ];
 
 export function DishesSection() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <section id="carta" className="relative py-24 md:py-36 bg-brand-dark">
-      {/* Subtle dot pattern texture */}
-      <div className="absolute inset-0 opacity-[0.012]">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, rgba(200,162,78,1) 1px, transparent 0)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-6 md:px-12">
-        {/* Section header */}
-        <div className="text-center mb-20 md:mb-28 observe-fade">
-          <span className="text-gold-500 text-[11px] tracking-widest-2xl uppercase font-light">
-            Nuestra Carta
-          </span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-cream-100 mt-4 mb-6">
-            Platillos Insignia
-          </h2>
-          <p className="text-cream-200/50 font-light max-w-lg mx-auto text-base">
-            Cada creacion refleja nuestra obsesion por la excelencia, los
-            ingredientes de origen y el respeto por la brasa.
-          </p>
-          <div className="h-px w-20 bg-gold-500/60 mx-auto mt-8" />
+    <>
+      <section id="carta" className="relative py-32 md:py-48 bg-brand-dark overflow-hidden">
+        {/* Subtle dot pattern texture — more refined */}
+        <div className="absolute inset-0 opacity-[0.008]">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, rgba(200,162,78,1) 0.5px, transparent 0)",
+              backgroundSize: "48px 48px",
+            }}
+          />
         </div>
 
-        {/* Dish grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {DISHES.map((dish, index) => (
-            <article
-              key={dish.name}
-              className={`observe-fade observe-fade-delay-${index + 1} group relative overflow-hidden glass-card hover:border-gold-500/10 transition-all duration-700`}
-            >
-              <div className="flex flex-col sm:flex-row">
-                {/* Dish image */}
-                <div className="relative w-full sm:w-48 md:w-56 h-56 sm:h-auto flex-shrink-0 overflow-hidden">
-                  <Image
-                    src={dish.image}
-                    alt={dish.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-[900ms] ease-out"
-                    sizes="(max-width: 640px) 100vw, 240px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-brand-dark/50 hidden sm:block" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 to-transparent sm:hidden" />
-                </div>
-
-                {/* Dish info */}
-                <div className="flex-1 p-6 sm:p-8 flex flex-col justify-center">
-                  <span className="text-gold-500/70 text-[10px] tracking-widest-2xl uppercase font-light mb-3">
-                    {dish.category}
-                  </span>
-                  <h3 className="font-serif text-xl md:text-2xl text-cream-100 mb-3 group-hover:text-gold-400 transition-colors duration-500">
-                    {dish.name}
-                  </h3>
-                  <p className="text-cream-300/50 text-sm font-light leading-relaxed">
-                    {dish.description}
-                  </p>
-                </div>
+        <div className="relative max-w-7xl mx-auto px-6 md:px-16">
+          {/* Section header — editorial scale */}
+          <div className="mb-24 md:mb-36 observe-fade">
+            <div className="flex items-start justify-between flex-col md:flex-row md:items-end gap-8">
+              <div>
+                <span className="text-gold-500/50 text-[10px] tracking-widest-3xl uppercase font-extralight block mb-6">
+                  Nuestra Carta
+                </span>
+                <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl text-cream-100 font-light leading-none">
+                  Platillos<br />
+                  <span className="text-cream-100/40">Insignia</span>
+                </h2>
               </div>
-            </article>
-          ))}
-        </div>
+              <p className="text-cream-200/35 font-extralight max-w-sm text-[15px] leading-relaxed md:text-right md:pb-2">
+                Cada creación refleja nuestra obsesión por la excelencia, los
+                ingredientes de origen y el respeto por la brasa.
+              </p>
+            </div>
+            <div className="h-px w-full bg-white/[0.04] mt-12" />
+          </div>
 
-        {/* View full menu CTA */}
-        <div className="text-center mt-16 observe-fade">
-          <a
-            href="#reservar"
-            className="inline-flex items-center gap-3 text-gold-400 text-sm tracking-widest uppercase font-light hover:text-gold-300 transition-colors duration-300 group"
-          >
-            <span>Ver carta completa</span>
-            <svg
-              className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {/* Dish editorial spread — alternating layout */}
+          <div className="space-y-20 md:space-y-32">
+            {DISHES.map((dish, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <article
+                  key={dish.name}
+                  className={`observe-fade observe-fade-delay-${(index % 3) + 1} group grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 items-center`}
+                >
+                  {/* Image */}
+                  <div
+                    className={`relative overflow-hidden ${
+                      isEven
+                        ? "md:col-span-7 md:order-1"
+                        : "md:col-span-7 md:order-2"
+                    }`}
+                  >
+                    <div className="relative aspect-[16/10] md:aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={dish.image}
+                        alt={dish.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
+                        sizes="(max-width: 768px) 100vw, 58vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 via-transparent to-transparent" />
+                      {/* Wine-tinted overlay on hover */}
+                      <div className="absolute inset-0 bg-wine-900/0 group-hover:bg-wine-900/5 transition-colors duration-700" />
+                    </div>
+                    {/* Category badge — positioned over image */}
+                    <div className={`absolute bottom-6 ${isEven ? "left-6" : "right-6"}`}>
+                      <span className="text-[9px] tracking-widest-2xl uppercase text-gold-400/70 font-extralight bg-brand-black/60 backdrop-blur-sm px-4 py-2 border border-gold-500/10">
+                        {dish.category}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Info */}
+                  <div
+                    className={`flex flex-col justify-center ${
+                      isEven
+                        ? "md:col-span-5 md:order-2 md:pl-8 lg:pl-16"
+                        : "md:col-span-5 md:order-1 md:pr-8 lg:pr-16"
+                    }`}
+                  >
+                    <div className="h-px w-10 bg-gold-500/20 mb-8" />
+                    <h3 className="font-serif text-2xl md:text-3xl lg:text-4xl text-cream-100 font-light leading-tight mb-5 group-hover:text-gold-400 transition-colors duration-700">
+                      {dish.name}
+                    </h3>
+                    <p className="text-cream-300/35 text-sm md:text-[15px] font-extralight leading-[1.9]">
+                      {dish.description}
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          {/* View full menu CTA — more refined */}
+          <div className="text-center mt-24 md:mt-36 observe-fade">
+            <div className="h-px w-full bg-white/[0.04] mb-16" />
+            <button
+              onClick={() => setMenuOpen(true)}
+              className="inline-flex items-center gap-4 text-gold-400/70 text-[11px] tracking-widest-xl uppercase font-extralight hover:text-gold-300 transition-all duration-500 group"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </a>
+              <span className="h-px w-8 bg-gold-500/30 group-hover:w-12 transition-all duration-500" />
+              <span>Ver carta completa</span>
+              <svg
+                className="w-4 h-4 group-hover:translate-x-3 transition-transform duration-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {menuOpen && <FullMenuModal onClose={() => setMenuOpen(false)} />}
+    </>
   );
 }

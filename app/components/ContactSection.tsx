@@ -1,6 +1,7 @@
 /* ═══════════════════════════════════════════════
-   CONTACT / SOCIAL SECTION
-   Social media links with hover effects.
+   CONTACT / SOCIAL SECTION — Michelin Edition
+   More refined, less decorative, more intentional.
+   Geometric social icons with sophisticated hovers.
    ═══════════════════════════════════════════════ */
 
 const SOCIALS = [
@@ -23,37 +24,40 @@ const SOCIALS = [
 
 export function ContactSection() {
   return (
-    <section id="contacto" className="relative py-24 md:py-32 bg-brand-dark">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section id="contacto" className="relative py-28 md:py-40 bg-brand-dark overflow-hidden">
+      {/* Top divider line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-16">
         <div className="text-center observe-fade">
-          <span className="text-gold-500 text-[11px] tracking-widest-2xl uppercase font-light">
+          <span className="text-gold-500/50 text-[10px] tracking-widest-3xl uppercase font-extralight block mb-6">
             Conecta con nosotros
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl text-cream-100 mt-4 mb-12">
-            Siguenos
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-cream-100 font-light mb-16">
+            Síguenos
           </h2>
 
-          {/* Social links */}
-          <div className="flex items-center justify-center gap-8 md:gap-12 mb-16">
+          {/* Social links — more geometric, refined */}
+          <div className="flex items-center justify-center gap-10 md:gap-16 mb-16">
             {SOCIALS.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-3"
+                className="group flex flex-col items-center gap-4"
                 aria-label={social.label}
               >
-                <div className="w-14 h-14 flex items-center justify-center border border-white/[0.08] rounded-full group-hover:border-gold-500/50 group-hover:bg-gold-500/5 group-hover:scale-110 transition-all duration-500">
+                <div className="w-16 h-16 flex items-center justify-center border border-white/[0.04] group-hover:border-gold-500/25 group-hover:bg-gold-500/[0.03] transition-all duration-700">
                   <svg
-                    className="w-5 h-5 text-cream-200/50 group-hover:text-gold-400 transition-colors duration-500"
+                    className="w-4.5 h-4.5 text-cream-200/30 group-hover:text-gold-400/70 transition-colors duration-700"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
                     <path d={social.icon} />
                   </svg>
                 </div>
-                <span className="text-[10px] tracking-widest uppercase text-cream-200/30 group-hover:text-gold-400/60 transition-colors duration-300">
+                <span className="text-[9px] tracking-widest-xl uppercase text-cream-200/15 group-hover:text-gold-400/40 transition-colors duration-500 font-extralight">
                   {social.label}
                 </span>
               </a>

@@ -8,13 +8,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Core brand palette — inspired by charcoal, embers, and aged wine
+        // Core brand palette — deepened, warmer, richer darks
         brand: {
-          black: "#0A0A0A",
-          charcoal: "#1A1A1A",
-          dark: "#141414",
-          carbon: "#222222",
-          smoke: "#2A2A2A",
+          black: "#080706",
+          charcoal: "#161412",
+          dark: "#111010",
+          carbon: "#1E1C1A",
+          smoke: "#252220",
         },
         gold: {
           50: "#FFF9E6",
@@ -53,17 +53,27 @@ const config: Config = {
         serif: ["var(--font-playfair)", "Playfair Display", "Georgia", "serif"],
         sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
       },
+      fontSize: {
+        "10xl": ["10rem", { lineHeight: "0.85" }],
+        "11xl": ["12rem", { lineHeight: "0.8" }],
+        "12xl": ["14rem", { lineHeight: "0.78" }],
+      },
       letterSpacing: {
         "widest-xl": "0.25em",
         "widest-2xl": "0.35em",
+        "widest-3xl": "0.5em",
       },
       animation: {
-        "fade-in": "fadeIn 1s ease-out forwards",
-        "fade-in-up": "fadeInUp 1s ease-out forwards",
-        "fade-in-slow": "fadeIn 2s ease-out forwards",
-        "slide-up": "slideUp 0.8s ease-out forwards",
-        "scale-in": "scaleIn 1.2s ease-out forwards",
-        "line-grow": "lineGrow 1.5s ease-out forwards",
+        "fade-in": "fadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "fade-in-up": "fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "fade-in-slow": "fadeIn 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "slide-up": "slideUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "scale-in": "scaleIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "line-grow": "lineGrow 2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "text-reveal": "textReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "letter-spread": "letterSpread 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "float": "float 6s ease-in-out infinite",
+        "pulse-subtle": "pulseSubtle 3s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -71,20 +81,36 @@ const config: Config = {
           "100%": { opacity: "1" },
         },
         fadeInUp: {
-          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "0%": { opacity: "0", transform: "translateY(40px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         slideUp: {
-          "0%": { opacity: "0", transform: "translateY(60px)" },
+          "0%": { opacity: "0", transform: "translateY(80px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         scaleIn: {
-          "0%": { opacity: "0", transform: "scale(0.95)" },
+          "0%": { opacity: "0", transform: "scale(0.92)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
         lineGrow: {
           "0%": { width: "0%" },
           "100%": { width: "100%" },
+        },
+        textReveal: {
+          "0%": { opacity: "0", transform: "translateY(100%)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        letterSpread: {
+          "0%": { letterSpacing: "0.1em", opacity: "0" },
+          "100%": { letterSpacing: "0.35em", opacity: "1" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        pulseSubtle: {
+          "0%, 100%": { opacity: "0.6" },
+          "50%": { opacity: "1" },
         },
       },
     },

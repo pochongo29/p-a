@@ -2,69 +2,72 @@ import Image from "next/image";
 import { IMAGES } from "./images";
 
 /* ═══════════════════════════════════════════════
-   EXPERIENCE / CONCEPT SECTION
-   Split layout: narrative left + atmospheric image right.
-   Tells the brand story with refined copywriting.
+   EXPERIENCE / CONCEPT SECTION — Michelin Edition
+   Asymmetric editorial layout with dramatic stat
+   typography. More whitespace, more presence.
    ═══════════════════════════════════════════════ */
 
 export function ExperienceSection() {
   return (
-    <section id="experiencia" className="relative py-24 md:py-36 bg-brand-black">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Section header */}
-        <div className="text-center mb-20 md:mb-28 observe-fade">
-          <span className="text-gold-500 text-[11px] tracking-widest-2xl uppercase font-light">
+    <section id="experiencia" className="relative py-32 md:py-48 bg-brand-black overflow-hidden">
+      {/* Subtle decorative line at top */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-16">
+        {/* Section header — much more dramatic */}
+        <div className="text-center mb-24 md:mb-40 observe-fade">
+          <span className="text-gold-500/60 text-[10px] tracking-widest-3xl uppercase font-extralight block mb-6">
             Nuestra Esencia
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-cream-100 mt-4 mb-6">
-            La Experiencia PUA
+          <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl text-cream-100 font-light leading-none">
+            La Experiencia PÚA
           </h2>
-          <div className="h-px w-20 bg-gold-500/60 mx-auto" />
+          <div className="h-px w-16 bg-gold-500/30 mx-auto mt-10" />
         </div>
 
-        {/* Split content: text + image */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Narrative */}
-          <div className="observe-fade order-2 lg:order-1">
-            <p className="text-cream-200/60 text-sm tracking-widest-xl uppercase font-light mb-6">
+        {/* Split content: text + image — more asymmetric */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-start">
+          {/* Narrative — takes 5 columns for asymmetry */}
+          <div className="observe-fade order-2 lg:order-1 lg:col-span-5 lg:pt-12">
+            <p className="text-gold-500/50 text-[10px] tracking-widest-3xl uppercase font-extralight mb-8">
               Cocina de autor
             </p>
-            <h3 className="font-serif text-3xl md:text-4xl text-cream-100 leading-snug mb-8">
-              Fuego, tradicion y
-              <span className="text-gold-400 italic"> vanguardia</span>
+            <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-cream-100 font-light leading-[1.15] mb-10">
+              Fuego, tradición y
+              <span className="text-gold-400 italic block mt-1"> vanguardia</span>
             </h3>
-            <div className="space-y-6 text-cream-300/70 font-light leading-relaxed text-base md:text-lg">
+            <div className="space-y-7 text-cream-300/50 font-extralight leading-[1.9] text-[15px] md:text-base">
               <p>
-                En PUA, cada platillo nace del dialogo entre el fuego y los
-                ingredientes mas selectos. Nuestros cortes premium son tratados
-                con la reverencia que merecen: madurados con precision, asados
+                En PÚA, cada platillo nace del diálogo entre el fuego y los
+                ingredientes más selectos. Nuestros cortes premium son tratados
+                con la reverencia que merecen: madurados con precisión, asados
                 sobre brasa viva y presentados como piezas de arte culinario.
               </p>
               <p>
-                Nuestra cocina contemporanea fusiona la riqueza de la tradicion
-                mexicana con tecnicas de vanguardia, creando una propuesta
-                gastronomica que desafia expectativas y celebra cada ingrediente
-                en su maxima expresion.
+                Nuestra cocina contemporánea fusiona la riqueza de la tradición
+                mexicana con técnicas de vanguardia, creando una propuesta
+                gastronómica que desafía expectativas y celebra cada ingrediente
+                en su máxima expresión.
               </p>
               <p>
-                Acompanado de una carta de vinos cuidadosamente curada, cada
+                Acompañado de una carta de vinos cuidadosamente curada, cada
                 visita se transforma en un viaje sensorial completo donde sabor,
-                ambiente y servicio se entrelazan en armonia.
+                ambiente y servicio se entrelazan en armonía.
               </p>
             </div>
 
-            {/* Signature details */}
-            <div className="grid grid-cols-3 gap-8 mt-12 pt-10 border-t border-white/[0.06]">
+            {/* Signature stats — dramatically larger */}
+            <div className="grid grid-cols-3 gap-6 mt-16 pt-12 border-t border-white/[0.04]">
               {[
                 { number: "5.0", label: "TripAdvisor" },
                 { number: "100+", label: "Etiquetas de Vino" },
-                { number: "2023", label: "Fundacion" },
+                { number: "2023", label: "Fundación" },
               ].map((stat) => (
-                <div key={stat.label}>
-                  <span className="font-serif text-2xl md:text-3xl text-gold-400">
+                <div key={stat.label} className="observe-fade">
+                  <span className="font-serif text-4xl md:text-5xl lg:text-6xl text-gold-400/80 font-light leading-none block">
                     {stat.number}
                   </span>
-                  <p className="text-cream-200/50 text-[10px] md:text-xs tracking-widest uppercase mt-2 font-light">
+                  <p className="text-cream-200/30 text-[9px] md:text-[10px] tracking-widest-2xl uppercase mt-4 font-extralight">
                     {stat.label}
                   </p>
                 </div>
@@ -72,21 +75,29 @@ export function ExperienceSection() {
             </div>
           </div>
 
-          {/* Atmospheric image */}
-          <div className="observe-fade observe-fade-delay-1 order-1 lg:order-2 relative">
-            <div className="relative aspect-[4/5] overflow-hidden">
+          {/* Atmospheric image — takes 7 columns */}
+          <div className="observe-fade observe-fade-delay-1 order-1 lg:order-2 lg:col-span-7 relative">
+            <div className="relative aspect-[3/4] md:aspect-[4/5] overflow-hidden">
               <Image
                 src={IMAGES.ambiance}
-                alt="Interior elegante de PUA Brasa y Vino"
+                alt="Interior elegante de PÚA Brasa y Vino"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 58vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-black/40 via-transparent to-brand-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-black/50 via-transparent to-brand-black/10" />
+              {/* Wine-tone overlay for warmth */}
+              <div className="absolute inset-0 bg-gradient-to-br from-wine-900/10 via-transparent to-transparent" />
             </div>
-            {/* Decorative corner accents */}
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b border-l border-gold-500/30" />
-            <div className="absolute -top-4 -right-4 w-24 h-24 border-t border-r border-gold-500/30" />
+            {/* Decorative corner accents — thinner, more refined */}
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 border-b border-l border-gold-500/15" />
+            <div className="absolute -top-6 -right-6 w-32 h-32 border-t border-r border-gold-500/15" />
+            {/* Floating label */}
+            <div className="absolute bottom-8 right-8 md:bottom-12 md:right-12">
+              <span className="text-[9px] tracking-widest-2xl text-gold-500/40 uppercase font-extralight">
+                Est. 2023
+              </span>
+            </div>
           </div>
         </div>
       </div>

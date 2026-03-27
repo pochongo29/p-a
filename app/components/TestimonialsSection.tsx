@@ -3,30 +3,29 @@
 import { useState, useEffect } from "react";
 
 /* ═══════════════════════════════════════════════
-   TESTIMONIALS SECTION
-   Auto-rotating testimonial cards with
-   subtle fade transitions. Social proof
-   that reinforces the premium positioning.
+   TESTIMONIALS SECTION — Michelin Edition
+   Theatrical presentation with viewport-filling
+   quote text. Minimal, dramatic, editorial.
    ═══════════════════════════════════════════════ */
 
 const TESTIMONIALS = [
   {
     quote:
-      "Lugar elegante con buen sabor. Pedimos salmon y arrachera y ambos platillos cumplieron nuestras expectativas. Muy recomendado.",
+      "Lugar elegante con buen sabor. Pedimos salmón y arrachera y ambos platillos superaron nuestras expectativas. Muy recomendable.",
     author: "Visitante de TripAdvisor",
     role: "Diciembre 2023",
     rating: 5,
   },
   {
     quote:
-      "Una experiencia gastronomica inigualable en Chilpancingo. El ambiente es sofisticado y el servicio impecable. Los cortes a la brasa son excepcionales.",
+      "Una experiencia gastronómica inigualable en Chilpancingo. El ambiente es sofisticado y el servicio impecable. Los cortes a la brasa son excepcionales.",
     author: "Comensal Frecuente",
     role: "Cliente recurrente",
     rating: 5,
   },
   {
     quote:
-      "La atencion al detalle en cada platillo es impresionante. La carta de vinos es extensa y el sommelier nos guio perfectamente. Sin duda, el mejor restaurante de la ciudad.",
+      "La atención al detalle en cada platillo es impresionante. La carta de vinos es extensa y el sommelier nos guió perfectamente. Sin duda, el mejor restaurante de la ciudad.",
     author: "Amante de la Gastronomia",
     role: "Experiencia de cena",
     rating: 5,
@@ -44,58 +43,63 @@ export function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="relative py-24 md:py-36 bg-brand-charcoal overflow-hidden">
-      {/* Subtle decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/20 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/20 to-transparent" />
+    <section className="relative py-36 md:py-52 bg-brand-charcoal overflow-hidden">
+      {/* Decorative top/bottom lines */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/10 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/10 to-transparent" />
 
-      <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
-        {/* Section header */}
-        <div className="mb-16 md:mb-20 observe-fade">
-          <span className="text-gold-500 text-[11px] tracking-widest-2xl uppercase font-light">
+      {/* Enormous background quote mark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
+        <span className="font-serif text-[24rem] md:text-[36rem] text-gold-500/[0.02] leading-none">
+          &ldquo;
+        </span>
+      </div>
+
+      {/* Geometric corner accents */}
+      <div className="absolute top-16 left-16 w-20 h-20 border-t border-l border-gold-500/8 hidden md:block" />
+      <div className="absolute bottom-16 right-16 w-20 h-20 border-b border-r border-gold-500/8 hidden md:block" />
+
+      <div className="max-w-5xl mx-auto px-6 md:px-16 text-center">
+        {/* Section header — minimal */}
+        <div className="mb-20 md:mb-28 observe-fade">
+          <span className="text-gold-500/50 text-[10px] tracking-widest-3xl uppercase font-extralight">
             Testimonios
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl text-cream-100 mt-4">
-            Lo que dicen nuestros invitados
-          </h2>
         </div>
 
-        {/* Testimonial card */}
-        <div className="relative min-h-[280px] md:min-h-[240px] observe-fade">
+        {/* Testimonial — dramatic viewport-filling quote */}
+        <div className="relative min-h-[350px] md:min-h-[320px] observe-fade">
           {TESTIMONIALS.map((testimonial, index) => (
             <div
               key={index}
-              className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ${
+              className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                 index === active
                   ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4 pointer-events-none"
+                  : "opacity-0 translate-y-6 pointer-events-none"
               }`}
             >
-              {/* Rating stars */}
-              <div className="flex gap-1.5 mb-8">
+              {/* Rating — minimal gold dots instead of stars */}
+              <div className="flex gap-2 mb-12">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <svg
+                  <div
                     key={i}
-                    className="w-4 h-4 text-gold-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
+                    className="w-1 h-1 rounded-full bg-gold-500/60"
+                  />
                 ))}
               </div>
 
-              {/* Quote */}
-              <blockquote className="font-serif text-xl md:text-2xl lg:text-3xl text-cream-100/90 leading-relaxed italic max-w-3xl">
+              {/* Quote — much larger, editorial */}
+              <blockquote className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-cream-100/80 leading-[1.3] italic font-light max-w-4xl">
                 &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
 
-              {/* Author */}
-              <div className="mt-8">
-                <p className="text-gold-400 text-sm font-medium tracking-wide">
+              {/* Author — refined */}
+              <div className="mt-12 md:mt-16">
+                <div className="h-px w-10 bg-gold-500/20 mx-auto mb-6" />
+                <p className="text-gold-400/70 text-xs font-light tracking-wider">
                   {testimonial.author}
                 </p>
-                <p className="text-cream-200/40 text-xs tracking-widest uppercase font-light mt-1">
+                <p className="text-cream-200/20 text-[10px] tracking-widest-xl uppercase font-extralight mt-2">
                   {testimonial.role}
                 </p>
               </div>
@@ -103,16 +107,16 @@ export function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Pagination dots */}
-        <div className="flex items-center justify-center gap-3 mt-12">
+        {/* Pagination — thinner, more refined */}
+        <div className="flex items-center justify-center gap-4 mt-16">
           {TESTIMONIALS.map((_, index) => (
             <button
               key={index}
               onClick={() => setActive(index)}
-              className={`transition-all duration-500 ${
+              className={`transition-all duration-700 ease-out ${
                 index === active
-                  ? "w-8 h-1 bg-gold-500"
-                  : "w-3 h-1 bg-cream-200/20 hover:bg-cream-200/40"
+                  ? "w-12 h-px bg-gold-500/60"
+                  : "w-4 h-px bg-cream-200/10 hover:bg-cream-200/25"
               }`}
               aria-label={`Ver testimonio ${index + 1}`}
             />

@@ -13,25 +13,25 @@ import { LocationSection } from "./components/LocationSection";
 import { ReservationSection } from "./components/ReservationSection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
+import { CustomCursor } from "./components/CustomCursor";
 
 /* ═══════════════════════════════════════════════
-   PUA BRASA Y VINO — Premium Restaurant Landing Page
+   PUA BRASA Y VINO — Michelin Star Edition
 
-   Visual direction: Dark, warm, cinematographic.
-   Like stepping into an upscale steakhouse at golden hour.
-   Palette: charcoal/black base, warm gold accents,
-   burgundy wine, cream typography.
+   Visual direction: Noma meets Mexican fire.
+   Editorial, cinematic, unapologetically premium.
+   Deep warm darks, restrained gold, wine accents.
 
    Structure:
    1. Hero (cinematic full-screen with parallax)
-   2. Experience / Concept (brand story)
-   3. Chef's Philosophy (editorial quote moment)
-   4. Signature Dishes (menu highlights)
-   5. Wine Section (the cellar experience)
-   6. Gallery (asymmetric masonry grid)
-   7. Testimonials (social proof carousel)
+   2. Experience / Concept (editorial brand story)
+   3. Chef's Philosophy (full-screen quote moment)
+   4. Signature Dishes (magazine-style spread)
+   5. Wine Section (intimate cellar experience)
+   6. Gallery (cinematic asymmetric grid)
+   7. Testimonials (theatrical quote carousel)
    8. Location & Hours
-   9. Reservation CTA
+   9. Reservation CTA (the crescendo)
    10. Social / Contact
    11. Footer
    ═══════════════════════════════════════════════ */
@@ -40,7 +40,8 @@ export default function PuaRestaurantPage() {
   useScrollObserver();
 
   return (
-    <main className="min-h-screen bg-brand-black">
+    <main className="min-h-screen bg-brand-black noise-overlay">
+      <CustomCursor />
       <Navbar />
       <HeroSection />
 

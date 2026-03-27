@@ -2,48 +2,60 @@ import Image from "next/image";
 import { IMAGES } from "./images";
 
 /* ═══════════════════════════════════════════════
-   CHEF'S PHILOSOPHY SECTION
-   New section: editorial-style storytelling moment.
-   Full-width cinematic image with overlaid text,
-   giving depth to the brand narrative.
+   CHEF'S PHILOSOPHY SECTION — Michelin Edition
+   Full-screen editorial quote treatment.
+   The quote mark becomes a massive design element.
+   Almost cinematic — thinks Noma or Geranium.
    ═══════════════════════════════════════════════ */
 
 export function PhilosophySection() {
   return (
     <section className="relative py-0 overflow-hidden">
       {/* Full-bleed image background */}
-      <div className="relative min-h-[60vh] md:min-h-[70vh] flex items-center">
+      <div className="relative min-h-[80vh] md:min-h-screen flex items-center">
         <div className="absolute inset-0">
           <Image
             src={IMAGES.chef}
-            alt="Cocina de PUA Brasa y Vino"
+            alt="Cocina de PÚA Brasa y Vino"
             fill
             className="object-cover"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-brand-black/75" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-black/90 via-brand-black/60 to-transparent" />
+          {/* Deeper, richer overlay */}
+          <div className="absolute inset-0 bg-brand-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-black/95 via-brand-black/70 to-brand-black/40" />
+          {/* Subtle wine tone bleed */}
+          <div className="absolute inset-0 bg-gradient-to-t from-wine-900/10 via-transparent to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
-          <div className="max-w-2xl observe-fade">
-            {/* Decorative quote mark */}
-            <span className="font-serif text-7xl md:text-8xl text-gold-500/20 leading-none block -mb-8 md:-mb-10">
-              &ldquo;
-            </span>
+        {/* Enormous decorative quote mark — full design element */}
+        <div className="absolute top-1/2 -translate-y-1/2 left-0 md:left-12 pointer-events-none select-none overflow-hidden">
+          <span className="font-serif text-[20rem] md:text-[30rem] lg:text-[40rem] text-gold-500/[0.03] leading-none block -ml-8 md:-ml-4">
+            &ldquo;
+          </span>
+        </div>
 
-            <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-cream-100 leading-snug mb-8 italic">
+        {/* Fine geometric accents */}
+        <div className="absolute top-16 right-16 w-24 h-24 border-t border-r border-gold-500/8 hidden md:block" />
+        <div className="absolute bottom-16 left-16 w-24 h-24 border-b border-l border-gold-500/8 hidden md:block" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 py-32 md:py-40">
+          <div className="max-w-4xl observe-fade">
+            {/* Small gold accent line */}
+            <div className="h-px w-20 bg-gold-500/30 mb-12" />
+
+            <blockquote className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-cream-100/90 leading-[1.15] mb-14 italic font-light">
               La brasa no miente. Revela la verdad de cada ingrediente,
               lo eleva o lo delata. Nuestro trabajo es honrar ese fuego.
             </blockquote>
 
-            <div className="flex items-center gap-4">
-              <div className="h-px w-12 bg-gold-500/60" />
+            <div className="flex items-center gap-6">
+              <div className="h-px w-16 bg-gold-500/40" />
               <div>
-                <p className="text-gold-400 text-sm font-medium tracking-wide">
-                  Filosofia de PUA
+                <p className="text-gold-400/80 text-sm font-light tracking-wider">
+                  Filosofía de PÚA
                 </p>
-                <p className="text-cream-200/40 text-xs tracking-widest uppercase font-light mt-1">
+                <p className="text-cream-200/25 text-[10px] tracking-widest-2xl uppercase font-extralight mt-2">
                   Cocina de Autor &middot; Chilpancingo
                 </p>
               </div>

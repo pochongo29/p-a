@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import { IMAGES } from "./images";
 
 /* ═══════════════════════════════════════════════
-   HERO SECTION
-   Full-screen cinematic opener.
-   Multi-layered overlay for depth.
-   Subtle parallax on scroll.
+   HERO SECTION — Michelin Edition
+   Full-viewport cinematic opener.
+   Dramatic scale, floating logo, editorial typography.
+   Multi-layered depth with parallax.
    ═══════════════════════════════════════════════ */
 
 export function HeroSection() {
@@ -20,8 +20,9 @@ export function HeroSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const parallaxOffset = scrollY * 0.3;
-  const opacityFade = Math.max(0, 1 - scrollY / 800);
+  const parallaxOffset = scrollY * 0.35;
+  const opacityFade = Math.max(0, 1 - scrollY / 700);
+  const logoScale = 1 + scrollY * 0.0003;
 
   return (
     <section
@@ -31,11 +32,11 @@ export function HeroSection() {
       {/* Background Image with parallax */}
       <div
         className="absolute inset-0 will-change-transform"
-        style={{ transform: `translateY(${parallaxOffset}px) scale(1.1)` }}
+        style={{ transform: `translateY(${parallaxOffset}px) scale(1.15)` }}
       >
         <Image
           src={IMAGES.hero}
-          alt="Corte premium a la brasa en PUA Brasa y Vino"
+          alt="Corte premium a la brasa en PÚA Brasa y Vino"
           fill
           className="object-cover object-center"
           priority
@@ -44,72 +45,83 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Multi-layer overlay for cinematic depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-black/70 via-brand-black/30 to-brand-black/90" />
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-black/50 via-transparent to-brand-black/30" />
-      {/* Warm vignette */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(10,10,10,0.7)_100%)]" />
+      {/* Multi-layer overlay for extreme cinematic depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-black/80 via-brand-black/20 to-brand-black" />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-black/60 via-transparent to-brand-black/40" />
+      {/* Warm deep vignette */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,rgba(8,7,6,0.85)_100%)]" />
+      {/* Subtle wine-tone warmth in corners */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(139,32,53,0.08)_0%,transparent_60%)]" />
+
+      {/* Decorative frame corners */}
+      <div className="absolute top-12 left-12 w-20 h-20 border-t border-l border-gold-500/10 hidden md:block animate-fade-in [animation-delay:1500ms]" />
+      <div className="absolute top-12 right-12 w-20 h-20 border-t border-r border-gold-500/10 hidden md:block animate-fade-in [animation-delay:1500ms]" />
+      <div className="absolute bottom-12 left-12 w-20 h-20 border-b border-l border-gold-500/10 hidden md:block animate-fade-in [animation-delay:1500ms]" />
+      <div className="absolute bottom-12 right-12 w-20 h-20 border-b border-r border-gold-500/10 hidden md:block animate-fade-in [animation-delay:1500ms]" />
 
       {/* Content */}
       <div
-        className="relative z-10 text-center px-6 max-w-4xl mx-auto"
+        className="relative z-10 text-center px-6 max-w-5xl mx-auto"
         style={{ opacity: opacityFade }}
       >
-        {/* Pre-title accent */}
-        <div className="animate-fade-in mb-6">
-          <span className="inline-block text-gold-500 text-[11px] md:text-xs tracking-widest-2xl uppercase font-light">
+        {/* Pre-title accent with horizontal rules */}
+        <div className="animate-fade-in mb-8 flex items-center justify-center gap-6">
+          <div className="h-px w-12 md:w-20 bg-gradient-to-r from-transparent to-gold-500/40" />
+          <span className="inline-block text-gold-500/70 text-[10px] md:text-[11px] tracking-widest-3xl uppercase font-extralight">
             Chilpancingo de los Bravo, Guerrero
           </span>
+          <div className="h-px w-12 md:w-20 bg-gradient-to-l from-transparent to-gold-500/40" />
         </div>
 
-        {/* Main heading */}
-        <h1 className="animate-fade-in-up font-serif text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold text-cream-50 leading-[0.9] tracking-tight mb-2">
-          PUA
-        </h1>
-
-        {/* Subtitle with decorative lines */}
-        <div className="animate-fade-in-up [animation-delay:200ms] flex items-center justify-center gap-4 md:gap-6 mb-8">
-          <span className="h-px w-12 md:w-20 bg-gradient-to-r from-transparent to-gold-500" />
-          <span className="font-serif text-lg md:text-2xl text-gold-400 tracking-widest-xl uppercase font-light italic">
-            Brasa y Vino
-          </span>
-          <span className="h-px w-12 md:w-20 bg-gradient-to-l from-transparent to-gold-500" />
+        {/* Logo principal — larger, floating presence */}
+        <div
+          className="animate-fade-in-up flex justify-center mb-10"
+          style={{ transform: `scale(${logoScale})` }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-hero.png"
+            alt="PÚA Brasa y Vino"
+            width={320}
+            height={320}
+            className="w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 object-contain drop-shadow-[0_0_80px_rgba(200,162,78,0.08)]"
+          />
         </div>
 
-        {/* Tagline */}
-        <p className="animate-fade-in [animation-delay:500ms] text-cream-200/70 text-base md:text-lg font-light tracking-wide max-w-xl mx-auto mb-12 leading-relaxed">
+        {/* Tagline — bigger, more editorial */}
+        <p className="animate-fade-in [animation-delay:600ms] text-cream-200/50 text-lg md:text-xl lg:text-2xl font-extralight tracking-wide max-w-2xl mx-auto mb-16 leading-relaxed">
           Donde el fuego transforma la materia prima en arte culinario.
           <br className="hidden md:block" />
-          Una experiencia gastronomica de autor.
+          Una experiencia gastronómica de autor.
         </p>
 
-        {/* CTAs */}
-        <div className="animate-fade-in-up [animation-delay:700ms] flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        {/* CTAs — more refined, thinner borders */}
+        <div className="animate-fade-in-up [animation-delay:900ms] flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
           <a
             href="#reservar"
-            className="group relative px-10 py-4 bg-gold-500 text-brand-black text-xs tracking-widest-xl uppercase font-semibold overflow-hidden transition-all duration-500"
+            className="group relative px-14 py-4 bg-gold-500/90 text-brand-black text-[10px] tracking-widest-2xl uppercase font-medium overflow-hidden transition-all duration-700"
           >
-            <span className="absolute inset-0 bg-gold-400 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+            <span className="absolute inset-0 bg-gold-400 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]" />
             <span className="relative z-10">Reservar Mesa</span>
           </a>
           <a
             href="#carta"
-            className="px-10 py-4 border border-cream-200/20 text-cream-200/80 text-xs tracking-widest-xl uppercase font-light hover:border-gold-500/60 hover:text-gold-400 transition-all duration-500"
+            className="px-14 py-4 border border-cream-200/10 text-cream-200/50 text-[10px] tracking-widest-2xl uppercase font-extralight hover:border-gold-500/40 hover:text-gold-400 transition-all duration-700"
           >
             Explorar Carta
           </a>
         </div>
       </div>
 
-      {/* Bottom scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in [animation-delay:1200ms]">
-        <div className="flex flex-col items-center gap-3">
-          <span className="text-[10px] tracking-widest-2xl text-cream-200/30 uppercase">
+      {/* Bottom scroll indicator — more elegant */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-fade-in [animation-delay:1600ms]">
+        <div className="flex flex-col items-center gap-4">
+          <span className="text-[9px] tracking-widest-3xl text-cream-200/20 uppercase font-extralight">
             Descubre
           </span>
-          <div className="relative w-px h-12">
-            <div className="absolute inset-0 bg-gradient-to-b from-gold-500/60 to-transparent" />
-            <div className="absolute top-0 w-px h-4 bg-gold-500 animate-pulse" />
+          <div className="relative w-px h-16">
+            <div className="absolute inset-0 bg-gradient-to-b from-gold-500/40 to-transparent" />
+            <div className="absolute top-0 w-px h-6 bg-gold-500/60 animate-pulse-subtle" />
           </div>
         </div>
       </div>
