@@ -124,7 +124,7 @@ export function HeroSection() {
       </div>
 
       {/* Bottom scroll indicator — more elegant */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-fade-in [animation-delay:1600ms]">
+      <div className="hidden md:block absolute bottom-10 left-1/2 -translate-x-1/2 animate-fade-in [animation-delay:1600ms]">
         <div className="flex flex-col items-center gap-4">
           <span className="hidden md:block text-[9px] tracking-widest-3xl text-cream-200/90 uppercase font-extralight">
             Descubre
