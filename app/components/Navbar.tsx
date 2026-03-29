@@ -21,8 +21,7 @@ export function Navbar() {
       const isMobile = window.innerWidth < 768;
       setScrolled(isScrolled);
       if (!navRef.current) return;
-      // Mobile: más transparente al hacer scroll; Desktop: sólido
-      const bgClass = isMobile ? "bg-brand-black/40" : "bg-brand-black/90";
+      const bgClass = isMobile ? "bg-brand-black" : "bg-brand-black/90";
       navRef.current.classList.toggle(bgClass, isScrolled);
       navRef.current.classList.toggle("backdrop-blur-md", isScrolled);
       navRef.current.classList.toggle("shadow-[0_1px_0_rgba(200,162,78,0.08)]", isScrolled);
