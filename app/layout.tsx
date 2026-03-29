@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -23,17 +23,19 @@ const inter = Inter({
   weight: ["200", "300", "400", "500", "600"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export const metadata: Metadata = {
   title: "PÚA Brasa y Vino | Restaurante Premium en Chilpancingo",
   description:
     "Experiencia gastronómica de autor. Cortes premium a la brasa, mariscos contemporáneos y una selecta carta de vinos. Reserva tu mesa en PÚA Brasa y Vino.",
   keywords:
     "PÚA, Brasa y Vino, restaurante Chilpancingo, fine dining, cortes premium, vino, steakhouse, cocina contemporánea",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    viewportFit: "cover",
-  },
+  icons: { icon: "/logo-hero.png", apple: "/logo-hero.png" },
   openGraph: {
     title: "PÚA Brasa y Vino | Restaurante Premium",
     description:
