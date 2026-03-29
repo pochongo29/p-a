@@ -14,6 +14,7 @@ import { ReservationSection } from "./components/ReservationSection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { CustomCursor } from "./components/CustomCursor";
+import { WhatsAppButton } from "./components/WhatsAppButton";
 
 /* ═══════════════════════════════════════════════
    PUA BRASA Y VINO — Michelin Star Edition
@@ -42,6 +43,7 @@ export default function PuaRestaurantPage() {
   return (
     <main className="min-h-screen bg-brand-black noise-overlay">
       <CustomCursor />
+      <WhatsAppButton />
       <Navbar />
       <HeroSection />
 
