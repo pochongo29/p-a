@@ -11,7 +11,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Reservar por WhatsApp"
-      className="fixed bottom-6 right-5 z-[70] group flex items-center justify-center w-14 h-14 rounded-full border border-gold-500/50 bg-transparent hover:border-gold-500/90 transition-all duration-500 touch-manipulation"
+      className="fixed bottom-6 right-5 z-[9999] group flex items-center justify-center w-14 h-14 rounded-full border border-gold-500/50 bg-transparent hover:border-gold-500/90 transition-all duration-500 touch-manipulation"
       style={{ bottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))" }}
     >
       {/* Gold glow ring */}
