@@ -21,11 +21,14 @@ export function Navbar() {
       const isMobile = window.innerWidth < 768;
       setScrolled(isScrolled);
       if (!navRef.current) return;
-      const bgClass = isMobile ? "bg-brand-black" : "bg-brand-black/90";
-      navRef.current.classList.toggle(bgClass, isScrolled);
+      // Mobile: always solid, only add extra effects on scroll
+      // Desktop: transparent → solid on scroll
+      if (!isMobile) {
+        navRef.current.classList.toggle("bg-brand-black/90", isScrolled);
+        navRef.current.classList.toggle("bg-transparent", !isScrolled);
+      }
       navRef.current.classList.toggle("backdrop-blur-md", isScrolled);
       navRef.current.classList.toggle("shadow-[0_1px_0_rgba(200,162,78,0.08)]", isScrolled);
-      navRef.current.classList.toggle("bg-transparent", !isScrolled);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -42,7 +45,7 @@ export function Navbar() {
     <>
       <nav
         ref={navRef}
-        className="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-500"
+        className="fixed top-0 left-0 right-0 z-50 bg-brand-black md:bg-transparent transition-all duration-500"
         style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
       >
         {/* Gold accent line on scroll */}
