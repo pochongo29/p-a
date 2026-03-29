@@ -11,14 +11,15 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Reservar por WhatsApp"
-      className="fixed bottom-6 right-6 z-50 group flex items-center justify-center w-14 h-14 rounded-full border border-gold-500/30 bg-brand-black/70 backdrop-blur-md hover:border-gold-500/70 hover:bg-brand-black/90 transition-all duration-500 shadow-[0_4px_24px_rgba(0,0,0,0.5)] touch-manipulation"
+      className="fixed bottom-6 right-5 z-[70] group flex items-center justify-center w-14 h-14 rounded-full border border-gold-500/60 bg-brand-charcoal/95 backdrop-blur-md hover:border-gold-500 hover:bg-brand-charcoal transition-all duration-500 shadow-[0_4px_32px_rgba(0,0,0,0.7),0_0_0_1px_rgba(200,162,78,0.1)] touch-manipulation"
+      style={{ bottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))" }}
     >
-      {/* Subtle gold glow ring on hover */}
-      <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_20px_rgba(200,162,78,0.15)]" />
+      {/* Gold glow ring */}
+      <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_24px_rgba(200,162,78,0.25)]" />
 
       {/* WhatsApp icon — cream/gold tinted, not green */}
       <svg
-        className="w-6 h-6 text-cream-200/70 group-hover:text-gold-400 transition-colors duration-500 relative z-10"
+        className="w-6 h-6 text-gold-400/90 group-hover:text-gold-300 transition-colors duration-500 relative z-10"
         viewBox="0 0 24 24"
         fill="currentColor"
       >
