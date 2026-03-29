@@ -40,7 +40,60 @@ export const metadata: Metadata = {
       "Donde el fuego encuentra la sofisticación. Cortes a la brasa, cocina de autor y vinos selectos en Chilpancingo.",
     type: "website",
     locale: "es_MX",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&h=630&q=85&auto=format&fit=crop",
+        width: 1200,
+        height: 630,
+        alt: "PÚA Brasa y Vino — Restaurante Premium en Chilpancingo",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "PÚA Brasa y Vino | Restaurante Premium",
+    description: "Cortes a la brasa, cocina de autor y vinos selectos en Chilpancingo.",
+    images: ["https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&h=630&q=85&auto=format&fit=crop"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "PÚA Brasa y Vino",
+  "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=85&auto=format",
+  "description": "Experiencia gastronómica de autor en Chilpancingo. Cortes premium a la brasa, cocina contemporánea y una selecta carta de vinos.",
+  "url": "https://puabrasayvino.com",
+  "telephone": "+527471090227",
+  "email": "contacto.puabv@gmail.com",
+  "priceRange": "$$$$",
+  "servesCuisine": ["Mexicana Contemporánea", "Parrilla", "Mariscos"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Lázaro Cárdenas, C. Eduardo Mendoza No. 15-11, Lote 35",
+    "addressLocality": "Chilpancingo de los Bravo",
+    "addressRegion": "Guerrero",
+    "postalCode": "39060",
+    "addressCountry": "MX"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 17.5429,
+    "longitude": -99.4972
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "13:00",
+      "closes": "01:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/puabrasayvino",
+    "https://www.instagram.com/puabrasayvino/",
+    "https://www.tiktok.com/@pua.restaurante"
+  ]
 };
 
 export default function RootLayout({
@@ -50,6 +103,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${playfair.variable} ${inter.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

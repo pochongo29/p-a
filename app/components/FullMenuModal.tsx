@@ -19,24 +19,28 @@ const MENU = [
         description:
           "Láminas de filete de res curadas en sal de mar, aceite de trufa negra, alcaparras, rúcula y parmesano añejo rallado en mesa.",
         tag: "Firma de la casa",
+        price: "$280",
       },
       {
         name: "Tostadas de Atún Sellado",
         description:
           "Atún aleta azul marinado en jengibre y soya, sellado al momento sobre tostada artesanal con aguacate cremoso y sriracha de la casa.",
         tag: null,
+        price: "$245",
       },
       {
         name: "Caldo de Hueso Artesanal",
         description:
           "Caldo de hueso rostizado a fuego lento durante 24 horas, con médula, hierbas finas, limón encurtido y pan de masa madre tostado.",
         tag: null,
+        price: "$195",
       },
       {
         name: "Tabla de Charcutería PÚA",
         description:
           "Selección de embutidos artesanales, quesos maduros de origen selecto, frutos secos tostados, miel de flores silvestres y mermelada de higo.",
         tag: "Para compartir",
+        price: "$380",
       },
     ],
   },
@@ -49,30 +53,35 @@ const MENU = [
         description:
           "Corte USDA Prime de 400g, madurado 28 días en seco. Sellado sobre brasa viva de encino, servido con reducción de vino tinto y vegetales de temporada.",
         tag: "El más solicitado",
+        price: "$650",
       },
       {
         name: "New York Strip",
         description:
           "Corte de 350g con marmoleado perfecto, costra de pimienta negra y flor de sal Maldon. Acompañado de mantequilla compuesta de hierbas finas.",
         tag: null,
+        price: "$580",
       },
       {
         name: "Tomahawk para Dos",
         description:
           "Corte espectacular de 1.2kg madurado en seco 45 días. Presentación en tabla, con chimichurri PÚA, salsa bordelesa y guarnición a elegir.",
         tag: "Para compartir",
+        price: "$1,280",
       },
       {
         name: "Filete Mignon",
         description:
           "El más tierno de nuestros cortes. 250g envuelto en tocino artesanal, sobre salsa bordelesa de vino tinto y puré trufado al momento.",
         tag: null,
+        price: "$520",
       },
       {
         name: "Arrachera Premium",
         description:
           "Corte marinado 24 horas en mezcal joven y especias de la casa. A la brasa, con guacamole de chile de árbol y tortillas artesanales.",
         tag: null,
+        price: "$380",
       },
     ],
   },
@@ -85,18 +94,21 @@ const MENU = [
         description:
           "Filete de salmón del Atlántico con costra de hierbas finas y mantequilla de limón, sobre puré de coliflor trufado y espuma de limón Meyer.",
         tag: null,
+        price: "$420",
       },
       {
         name: "Pulpo a las Brasas",
         description:
           "Tentáculo de pulpo confitado en aceite de oliva y terminado a la brasa. Servido con puré de papa ahumado, aceite de páprika y microgreens.",
         tag: "Firma de la casa",
+        price: "$480",
       },
       {
         name: "Ceviche de Camarón Azul",
         description:
           "Camarón azul de Sinaloa en leche de tigre de chile habanero y cítricos. Con mango Manila, pepino, cebolla morada y tostadas de maíz azul.",
         tag: null,
+        price: "$320",
       },
     ],
   },
@@ -109,18 +121,21 @@ const MENU = [
         description:
           "Pierna de cordero confitada 12 horas a baja temperatura, glaseada con miel de agave y chile guajillo. Sobre polenta cremosa con queso de cabra.",
         tag: null,
+        price: "$580",
       },
       {
         name: "Pato en Mole Negro",
         description:
           "Pechuga de pato rostizada de piel crujiente, con mole negro de Guerrero elaborado en casa. Arroz de hierba santa y jícama encurtida.",
         tag: "Cocina de autor",
+        price: "$520",
       },
       {
         name: "Tasting de la Casa",
         description:
           "Experiencia de cinco tiempos maridada con nuestra selección de vinos. Un recorrido curado por los sabores insignia de PÚA.",
         tag: "Experiencia completa",
+        price: "$980",
       },
     ],
   },
@@ -132,26 +147,31 @@ const MENU = [
         name: "Puré Trufado",
         description: "Papa Cambray, mantequilla francesa y aceite de trufa negra.",
         tag: null,
+        price: "$145",
       },
       {
         name: "Papas Rostizadas al Romero",
         description: "Papas cambray rostizadas con romero fresco, ajo confitado y flor de sal.",
         tag: null,
+        price: "$120",
       },
       {
         name: "Espárragos a la Brasa",
         description: "Espárragos verdes a la brasa con mantequilla de limón y almendras tostadas.",
         tag: null,
+        price: "$155",
       },
       {
         name: "Ensalada de Rúcula y Parmesano",
         description: "Rúcula fresca, parmesano laminado, nueces caramelizadas y vinagreta balsámica.",
         tag: null,
+        price: "$135",
       },
       {
         name: "Arroz de Azafrán",
         description: "Arroz de grano largo infusionado en azafrán de La Mancha con hierbas finas.",
         tag: null,
+        price: "$125",
       },
     ],
   },
@@ -164,24 +184,28 @@ const MENU = [
         description:
           "Bizcocho tibio de chocolate 70% cacao con corazón fundente, helado de vainilla de Madagascar y caramelo salado artesanal.",
         tag: "El favorito",
+        price: "$195",
       },
       {
         name: "Cheesecake de Cajeta",
         description:
           "Base de galleta artesanal, cremoso de cajeta de Celaya, gel de frutos rojos silvestres y crumble de avellana tostada.",
         tag: null,
+        price: "$175",
       },
       {
         name: "Sorbete de Temporada",
         description:
           "Preparación diaria con frutas de temporada de Guerrero, servido con espuma de champagne y flores comestibles.",
         tag: null,
+        price: "$155",
       },
       {
         name: "Tabla de Quesos",
         description:
           "Selección de quesos artesanales mexicanos y europeos, miel de abeja, nueces, uvas y pan brioche tostado.",
         tag: "Para compartir",
+        price: "$285",
       },
     ],
   },
@@ -279,17 +303,22 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
                 {section.items.map((item) => (
                   <div
                     key={item.name}
-                    className="group border-b border-white/[0.03] pb-10 hover:border-gold-500/10 transition-colors duration-700"
+                    className="group border-b border-white/[0.03] pb-8 hover:border-gold-500/10 transition-colors duration-700"
                   >
-                    <div className="flex items-start justify-between gap-4 mb-3">
+                    <div className="flex items-start justify-between gap-4 mb-2">
                       <h4 className="font-serif text-lg md:text-xl text-cream-100/95 group-hover:text-gold-400/92 transition-colors duration-500 leading-snug font-light">
                         {item.name}
                       </h4>
-                      {item.tag && (
-                        <span className="flex-shrink-0 text-[8px] tracking-widest-xl uppercase text-gold-500/72 border border-gold-500/10 px-2.5 py-1 font-extralight mt-1">
-                          {item.tag}
+                      <div className="flex flex-col items-end gap-1.5 flex-shrink-0">
+                        <span className="shimmer-gold font-serif text-lg font-light leading-none">
+                          {item.price}
                         </span>
-                      )}
+                        {item.tag && (
+                          <span className="text-[8px] tracking-widest-xl uppercase text-gold-500/72 border border-gold-500/10 px-2.5 py-1 font-extralight">
+                            {item.tag}
+                          </span>
+                        )}
+                      </div>
                     </div>
                     <p className="text-cream-300/85 text-sm font-extralight leading-[1.8]">
                       {item.description}

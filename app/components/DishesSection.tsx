@@ -19,6 +19,7 @@ const DISHES = [
     description:
       "Corte USDA Prime de 400g, madurado 28 días. Sellado sobre brasa de encino y servido con reducción de vino tinto y vegetales de temporada.",
     category: "Cortes Premium",
+    price: "$650",
     image: IMAGES.dish1,
   },
   {
@@ -26,6 +27,7 @@ const DISHES = [
     description:
       "Filete de salmón del Atlántico con costra de hierbas finas, sobre puré de coliflor trufado y espuma de limón Meyer.",
     category: "Mar",
+    price: "$420",
     image: IMAGES.dish2,
   },
   {
@@ -33,6 +35,7 @@ const DISHES = [
     description:
       "Pierna de cordero confitada 12 horas a baja temperatura, glaseada con miel de agave y chile guajillo, sobre polenta cremosa.",
     category: "Especialidades",
+    price: "$580",
     image: IMAGES.dish3,
   },
   {
@@ -40,6 +43,7 @@ const DISHES = [
     description:
       "Experiencia de cinco tiempos maridada con nuestra selección de vinos. Un recorrido por los sabores insignia de PÚA.",
     category: "Experiencia",
+    price: "$980",
     image: IMAGES.dish4,
   },
 ];
@@ -129,9 +133,14 @@ export function DishesSection() {
                     }`}
                   >
                     <div className="h-px w-10 bg-gold-500/20 mb-8" />
-                    <h3 className="font-serif text-2xl md:text-3xl lg:text-4xl text-cream-100 font-light leading-tight mb-5 group-hover:text-gold-400 transition-colors duration-700">
-                      {dish.name}
-                    </h3>
+                    <div className="flex items-start justify-between gap-4 mb-2">
+                      <h3 className="font-serif text-2xl md:text-3xl lg:text-4xl text-cream-100 font-light leading-tight group-hover:text-gold-400 transition-colors duration-700">
+                        {dish.name}
+                      </h3>
+                      <span className="shimmer-gold font-serif text-2xl font-light flex-shrink-0 mt-1">
+                        {dish.price}
+                      </span>
+                    </div>
                     <RatingStars dishId={dish.name} />
                     <p className="text-cream-300/88 text-sm md:text-[15px] font-extralight leading-[1.9]">
                       {dish.description}

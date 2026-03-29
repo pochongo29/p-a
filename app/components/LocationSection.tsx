@@ -122,7 +122,7 @@ export function LocationSection() {
           <div className="observe-fade observe-fade-delay-1 relative lg:col-span-7">
             <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[280px] md:min-h-[400px] overflow-hidden bg-brand-charcoal">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.5!2d-99.4972!3d17.5429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDMyJzM0LjMiTiA5OcKwMjknNTAuMCJX!5e0!3m2!1ses!2smx!4v1"
+                src="https://maps.google.com/maps?q=Av.+Lazaro+Cardenas+Eduardo+Mendoza+Chilpancingo+Guerrero+Mexico&output=embed&z=16"
                 className="absolute inset-0 w-full h-full border-0 grayscale contrast-125 opacity-40 hover:grayscale-0 hover:opacity-80 transition-all duration-1000"
                 allowFullScreen
                 loading="lazy"
