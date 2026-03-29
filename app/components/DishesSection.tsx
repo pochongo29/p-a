@@ -159,7 +159,7 @@ export function DishesSection() {
             <div className="flex flex-col items-center gap-6">
               <button
                 onClick={() => setMenuOpen(true)}
-                className="group relative inline-flex items-center justify-center gap-5 px-12 py-5 overflow-hidden border border-gold-500/30 hover:border-gold-500/70 transition-all duration-700"
+                className="group relative inline-flex items-center justify-center gap-6 px-16 py-7 overflow-hidden border border-gold-500/30 hover:border-gold-500/70 transition-all duration-700"
               >
                 {/* Hover fill */}
                 <span className="absolute inset-0 bg-gold-500/0 group-hover:bg-gold-500/6 transition-colors duration-700" />
@@ -173,7 +173,7 @@ export function DishesSection() {
                   <span className="text-gold-400 text-[10px] tracking-widest-3xl uppercase font-extralight">
                     Explorar
                   </span>
-                  <span className="font-serif text-cream-100 text-xl md:text-2xl font-light tracking-wide group-hover:text-gold-300 transition-colors duration-500">
+                  <span className="font-serif text-cream-100 text-2xl md:text-3xl font-light tracking-wide group-hover:text-gold-300 transition-colors duration-500">
                     Carta Completa
                   </span>
                 </span>
