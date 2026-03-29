@@ -14,15 +14,25 @@ export function Navbar() {
   const navRef = useRef<HTMLElement>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 60;
+      const currentY = window.scrollY;
       const isMobile = window.innerWidth < 768;
+      const isScrolled = currentY > 60;
       setScrolled(isScrolled);
+
+      // Hide on scroll down, show on scroll up (only after passing 80px)
+      if (isMobile && currentY > 80) {
+        setHidden(currentY > lastScrollY.current);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY.current = currentY;
+
       if (!navRef.current) return;
-      // Mobile: always solid, only add extra effects on scroll
-      // Desktop: transparent → solid on scroll
       if (!isMobile) {
         navRef.current.classList.toggle("bg-brand-black/90", isScrolled);
         navRef.current.classList.toggle("bg-transparent", !isScrolled);
@@ -45,7 +55,8 @@ export function Navbar() {
     <>
       <nav
         ref={navRef}
-        className="fixed top-0 left-0 right-0 z-50 bg-brand-black md:bg-transparent transition-all duration-500"
+        className={`fixed top-0 left-0 right-0 z-50 bg-brand-black md:bg-transparent transition-all duration-300
+          ${hidden && !mobileOpen ? "-translate-y-full" : "translate-y-0"}`}
         style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
       >
         {/* Gold accent line on scroll */}
