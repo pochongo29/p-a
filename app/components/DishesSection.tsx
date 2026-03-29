@@ -72,10 +72,10 @@ export function DishesSection() {
                 </span>
                 <h2 className="heading-glow font-serif text-5xl md:text-7xl lg:text-8xl text-cream-100 font-light leading-none">
                   Platillos<br />
-                  <span className="text-cream-100/65">Insignia</span>
+                  <span className="text-cream-100">Insignia</span>
                 </h2>
               </div>
-              <p className="text-cream-200/65 font-extralight max-w-sm text-[15px] leading-relaxed md:text-right md:pb-2">
+              <p className="text-cream-200/90 font-extralight max-w-sm text-[15px] leading-relaxed md:text-right md:pb-2">
                 Cada creación refleja nuestra obsesión por la excelencia, los
                 ingredientes de origen y el respeto por la brasa.
               </p>
@@ -114,7 +114,7 @@ export function DishesSection() {
                     </div>
                     {/* Category badge — positioned over image */}
                     <div className={`absolute bottom-6 ${isEven ? "left-6" : "right-6"}`}>
-                      <span className="text-[9px] tracking-widest-2xl uppercase text-gold-400/70 font-extralight bg-brand-black/60 backdrop-blur-sm px-4 py-2 border border-gold-500/10">
+                      <span className="text-[9px] tracking-widest-2xl uppercase text-gold-400/92 font-extralight bg-brand-black/60 backdrop-blur-sm px-4 py-2 border border-gold-500/10">
                         {dish.category}
                       </span>
                     </div>
@@ -133,7 +133,7 @@ export function DishesSection() {
                       {dish.name}
                     </h3>
                     <RatingStars dishId={dish.name} />
-                    <p className="text-cream-300/70 text-sm md:text-[15px] font-extralight leading-[1.9]">
+                    <p className="text-cream-300/88 text-sm md:text-[15px] font-extralight leading-[1.9]">
                       {dish.description}
                     </p>
                   </div>
@@ -147,7 +147,7 @@ export function DishesSection() {
             <div className="h-px w-full bg-white/[0.04] mb-16" />
             <button
               onClick={() => setMenuOpen(true)}
-              className="inline-flex items-center gap-4 text-gold-400/70 text-[11px] tracking-widest-xl uppercase font-extralight hover:text-gold-300 transition-all duration-500 group"
+              className="inline-flex items-center gap-4 text-gold-400/92 text-[11px] tracking-widest-xl uppercase font-extralight hover:text-gold-300 transition-all duration-500 group"
             >
               <span className="h-px w-8 bg-gold-500/30 group-hover:w-12 transition-all duration-500" />
               <span>Ver carta completa</span>

@@ -36,7 +36,7 @@ export function ExperienceSection() {
               Fuego, tradición y
               <span className="shimmer-gold italic block mt-1"> vanguardia</span>
             </h3>
-            <div className="space-y-7 text-cream-300/75 font-extralight leading-[1.9] text-[15px] md:text-base">
+            <div className="space-y-7 text-cream-300/90 font-extralight leading-[1.9] text-[15px] md:text-base">
               <p>
                 En PÚA, cada platillo nace del diálogo entre el fuego y los
                 ingredientes más selectos. Nuestros cortes premium son tratados
@@ -67,7 +67,7 @@ export function ExperienceSection() {
                   <span className="shimmer-gold font-serif text-3xl md:text-5xl lg:text-6xl font-light leading-none block">
                     {stat.number}
                   </span>
-                  <p className="text-cream-200/60 text-[9px] md:text-[10px] tracking-widest-2xl uppercase mt-4 font-extralight">
+                  <p className="text-cream-200/90 text-[9px] md:text-[10px] tracking-widest-2xl uppercase mt-4 font-extralight">
                     {stat.label}
                   </p>
                 </div>
@@ -94,7 +94,7 @@ export function ExperienceSection() {
             <div className="absolute -top-6 -right-6 w-32 h-32 border-t border-r border-gold-500/15" />
             {/* Floating label */}
             <div className="absolute bottom-8 right-8 md:bottom-12 md:right-12">
-              <span className="text-[9px] tracking-widest-2xl text-gold-500/40 uppercase font-extralight">
+              <span className="text-[9px] tracking-widest-2xl text-gold-500/78 uppercase font-extralight">
                 Est. 2023
               </span>
             </div>

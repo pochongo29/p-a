@@ -73,7 +73,7 @@ export function Navbar() {
             <span className="font-serif text-xl md:text-2xl font-light text-cream-100 tracking-wider group-hover:text-gold-400 transition-colors duration-700 leading-none">
               PÚA
             </span>
-            <span className="text-[8px] md:text-[9px] tracking-widest-3xl text-gold-500/70 font-light uppercase mt-0.5">
+            <span className="text-[8px] md:text-[9px] tracking-widest-3xl text-gold-500/95 font-light uppercase mt-0.5">
               Brasa y Vino
             </span>
           </div>
@@ -85,7 +85,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="hover-underline text-[11px] tracking-widest-xl uppercase text-cream-200/50 hover:text-cream-100 transition-colors duration-500 font-light"
+              className="hover-underline text-[11px] tracking-widest-xl uppercase text-cream-200/90 hover:text-cream-100 transition-colors duration-500 font-light"
             >
               {link.label}
             </a>
@@ -93,7 +93,7 @@ export function Navbar() {
 
           <a
             href="#reservar"
-            className="ml-6 px-8 py-2 border border-gold-500/30 text-gold-500/80 text-[10px] tracking-widest-2xl uppercase hover:bg-gold-500 hover:text-brand-black hover:border-gold-500 transition-all duration-700 font-light"
+            className="ml-6 px-8 py-2 border border-gold-500/30 text-gold-500 text-[10px] tracking-widest-2xl uppercase hover:bg-gold-500 hover:text-brand-black hover:border-gold-500 transition-all duration-700 font-light"
           >
             Reservar
           </a>
@@ -147,7 +147,7 @@ export function Navbar() {
           height={96}
           className="w-20 h-20 object-contain opacity-80"
         />
-        <span className="text-[9px] tracking-widest-3xl text-gold-500/60 font-light uppercase -mt-4 mb-10">
+        <span className="text-[9px] tracking-widest-3xl text-gold-500/92 font-light uppercase -mt-4 mb-10">
           Brasa y Vino
         </span>
 
@@ -156,7 +156,7 @@ export function Navbar() {
             key={link.href}
             href={link.href}
             onClick={() => setMobileOpen(false)}
-            className="text-base tracking-widest-xl uppercase text-cream-200/60 hover:text-gold-400 transition-all duration-500 font-extralight"
+            className="text-base tracking-widest-xl uppercase text-cream-200/90 hover:text-gold-400 transition-all duration-500 font-extralight"
             style={{
               transitionDelay: mobileOpen ? `${i * 70 + 100}ms` : "0ms",
               opacity: mobileOpen ? 1 : 0,
@@ -172,7 +172,7 @@ export function Navbar() {
         <a
           href="#reservar"
           onClick={() => setMobileOpen(false)}
-          className="px-12 py-3 border border-gold-500/30 text-gold-400/80 text-[11px] tracking-widest-2xl uppercase hover:bg-gold-500 hover:text-brand-black transition-all duration-700 font-light"
+          className="px-12 py-3 border border-gold-500/30 text-gold-400 text-[11px] tracking-widest-2xl uppercase hover:bg-gold-500 hover:text-brand-black transition-all duration-700 font-light"
           style={{
             transitionDelay: mobileOpen ? "550ms" : "0ms",
             opacity: mobileOpen ? 1 : 0,

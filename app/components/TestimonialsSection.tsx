@@ -62,7 +62,7 @@ export function TestimonialsSection() {
       <div className="max-w-5xl mx-auto px-6 md:px-16 text-center">
         {/* Section header — minimal */}
         <div className="mb-10 md:mb-28 observe-fade">
-          <span className="text-gold-500/50 text-[10px] tracking-widest-3xl uppercase font-extralight">
+          <span className="text-gold-500/90 text-[10px] tracking-widest-3xl uppercase font-extralight">
             Testimonios
           </span>
         </div>
@@ -89,17 +89,17 @@ export function TestimonialsSection() {
               </div>
 
               {/* Quote — much larger, editorial */}
-              <blockquote className="font-serif text-xl sm:text-3xl md:text-4xl lg:text-5xl text-cream-100/90 leading-[1.4] italic font-light max-w-4xl">
+              <blockquote className="font-serif text-xl sm:text-3xl md:text-4xl lg:text-5xl text-cream-100 leading-[1.4] italic font-light max-w-4xl">
                 &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
 
               {/* Author — refined */}
               <div className="mt-8 md:mt-16">
                 <div className="h-px w-10 bg-gold-500/20 mx-auto mb-6" />
-                <p className="text-gold-400/70 text-xs font-light tracking-wider">
+                <p className="text-gold-400/92 text-xs font-light tracking-wider">
                   {testimonial.author}
                 </p>
-                <p className="text-cream-200/20 text-[10px] tracking-widest-xl uppercase font-extralight mt-2">
+                <p className="text-cream-200/90 text-[10px] tracking-widest-xl uppercase font-extralight mt-2">
                   {testimonial.role}
                 </p>
               </div>

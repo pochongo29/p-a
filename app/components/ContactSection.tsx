@@ -50,14 +50,14 @@ export function ContactSection() {
               >
                 <div className="w-16 h-16 md:w-16 md:h-16 flex items-center justify-center border border-white/[0.06] group-hover:border-gold-500/25 group-hover:bg-gold-500/[0.03] transition-all duration-700 touch-manipulation">
                   <svg
-                    className="w-5 h-5 text-cream-200/50 group-hover:text-gold-400/70 transition-colors duration-700"
+                    className="w-5 h-5 text-cream-200/90 group-hover:text-gold-400/92 transition-colors duration-700"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
                     <path d={social.icon} />
                   </svg>
                 </div>
-                <span className="text-[9px] tracking-widest-xl uppercase text-cream-200/40 group-hover:text-gold-400/70 transition-colors duration-500 font-extralight">
+                <span className="text-[9px] tracking-widest-xl uppercase text-cream-200/78 group-hover:text-gold-400/92 transition-colors duration-500 font-extralight">
                   {social.label}
                 </span>
               </a>

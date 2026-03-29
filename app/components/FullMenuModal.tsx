@@ -227,17 +227,17 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
         {/* Sticky header — more refined */}
         <div className="sticky top-0 z-10 bg-brand-black/95 backdrop-blur-xl border-b border-white/[0.04] px-4 sm:px-6 md:px-16 py-4 md:py-6 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <span className="font-serif text-xl md:text-2xl text-cream-100/80 tracking-wider font-light">
+            <span className="font-serif text-xl md:text-2xl text-cream-100/95 tracking-wider font-light">
               PÚA
             </span>
             <div className="h-4 w-px bg-white/[0.08]" />
-            <span className="text-[9px] tracking-widest-2xl text-gold-500/50 uppercase font-extralight">
+            <span className="text-[9px] tracking-widest-2xl text-gold-500/90 uppercase font-extralight">
               Carta Completa
             </span>
           </div>
           <button
             onClick={onClose}
-            className="flex items-center gap-3 text-cream-200/25 hover:text-gold-400/60 transition-colors duration-500 text-[10px] tracking-widest-xl uppercase font-extralight"
+            className="flex items-center gap-3 text-cream-200/90 hover:text-gold-400/90 transition-colors duration-500 text-[10px] tracking-widest-xl uppercase font-extralight"
             aria-label="Cerrar carta"
           >
             <span className="hidden sm:inline">Cerrar</span>
@@ -252,7 +252,7 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
           {/* Intro line */}
           <div className="text-center">
             <div className="h-px w-16 bg-gold-500/20 mx-auto mb-10" />
-            <p className="text-cream-200/25 font-extralight text-sm leading-[1.9] max-w-md mx-auto">
+            <p className="text-cream-200/90 font-extralight text-sm leading-[1.9] max-w-md mx-auto">
               Nuestra carta cambia con las estaciones para honrar los mejores
               ingredientes de cada momento. Consulta a nuestro equipo para conocer
               las creaciones del día.
@@ -265,10 +265,10 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
             <div key={section.category}>
               {/* Category header — more editorial */}
               <div className="mb-12 md:mb-16">
-                <span className="text-gold-500/40 text-[9px] tracking-widest-3xl uppercase font-extralight">
+                <span className="text-gold-500/78 text-[9px] tracking-widest-3xl uppercase font-extralight">
                   {section.label}
                 </span>
-                <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl text-cream-100/90 mt-3 font-light">
+                <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl text-cream-100 mt-3 font-light">
                   {section.category}
                 </h3>
                 <div className="h-px w-12 bg-gold-500/20 mt-6" />
@@ -282,16 +282,16 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
                     className="group border-b border-white/[0.03] pb-10 hover:border-gold-500/10 transition-colors duration-700"
                   >
                     <div className="flex items-start justify-between gap-4 mb-3">
-                      <h4 className="font-serif text-lg md:text-xl text-cream-100/80 group-hover:text-gold-400/70 transition-colors duration-500 leading-snug font-light">
+                      <h4 className="font-serif text-lg md:text-xl text-cream-100/95 group-hover:text-gold-400/92 transition-colors duration-500 leading-snug font-light">
                         {item.name}
                       </h4>
                       {item.tag && (
-                        <span className="flex-shrink-0 text-[8px] tracking-widest-xl uppercase text-gold-500/35 border border-gold-500/10 px-2.5 py-1 font-extralight mt-1">
+                        <span className="flex-shrink-0 text-[8px] tracking-widest-xl uppercase text-gold-500/72 border border-gold-500/10 px-2.5 py-1 font-extralight mt-1">
                           {item.tag}
                         </span>
                       )}
                     </div>
-                    <p className="text-cream-300/60 text-sm font-extralight leading-[1.8]">
+                    <p className="text-cream-300/85 text-sm font-extralight leading-[1.8]">
                       {item.description}
                     </p>
                   </div>
@@ -303,7 +303,7 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
           {/* Footer note */}
           <div className="text-center pt-8 pb-8">
             <div className="h-px w-16 bg-gold-500/10 mx-auto mb-10" />
-            <p className="text-cream-200/15 text-[11px] font-extralight tracking-wide leading-relaxed max-w-sm mx-auto">
+            <p className="text-cream-200/55 text-[11px] font-extralight tracking-wide leading-relaxed max-w-sm mx-auto">
               Informamos a nuestros comensales que algunos platillos pueden contener
               alérgenos. Consulta a nuestro equipo para más información.
             </p>

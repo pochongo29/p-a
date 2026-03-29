@@ -55,7 +55,7 @@ export function PhilosophySection() {
                 <p className="shimmer-gold text-sm font-light tracking-wider">
                   Filosofía de PÚA
                 </p>
-                <p className="text-cream-200/60 text-[10px] tracking-widest-2xl uppercase font-extralight mt-2">
+                <p className="text-cream-200/90 text-[10px] tracking-widest-2xl uppercase font-extralight mt-2">
                   Cocina de Autor &middot; Chilpancingo
                 </p>
               </div>

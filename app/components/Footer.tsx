@@ -32,15 +32,15 @@ export function Footer() {
                 className="w-10 h-10 object-contain opacity-60"
               />
               <div>
-                <span className="font-serif text-2xl text-cream-100/80 tracking-wider font-light">
+                <span className="font-serif text-2xl text-cream-100/95 tracking-wider font-light">
                   PÚA
                 </span>
-                <p className="text-[8px] tracking-widest-3xl text-gold-500/40 uppercase font-extralight">
+                <p className="text-[8px] tracking-widest-3xl text-gold-500/78 uppercase font-extralight">
                   Brasa y Vino
                 </p>
               </div>
             </div>
-            <p className="text-cream-200/45 text-sm font-extralight mt-4 leading-[1.9] max-w-xs">
+            <p className="text-cream-200/82 text-sm font-extralight mt-4 leading-[1.9] max-w-xs">
               Una experiencia gastronómica donde el fuego, la tradición y la
               innovación se encuentran.
             </p>
@@ -48,7 +48,7 @@ export function Footer() {
 
           {/* Quick links */}
           <div className="md:col-span-3">
-            <h4 className="text-gold-500/30 text-[9px] tracking-widest-3xl uppercase mb-8 font-extralight">
+            <h4 className="text-gold-500/68 text-[9px] tracking-widest-3xl uppercase mb-8 font-extralight">
               Navegar
             </h4>
             <div className="space-y-4">
@@ -56,7 +56,7 @@ export function Footer() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="block text-cream-200/50 text-sm font-extralight hover:text-gold-400/60 transition-colors duration-500 touch-manipulation"
+                  className="block text-cream-200/90 text-sm font-extralight hover:text-gold-400/90 transition-colors duration-500 touch-manipulation"
                 >
                   {link.label}
                 </a>
@@ -66,22 +66,22 @@ export function Footer() {
 
           {/* Contact column */}
           <div className="md:col-span-4">
-            <h4 className="text-gold-500/30 text-[9px] tracking-widest-3xl uppercase mb-8 font-extralight">
+            <h4 className="text-gold-500/68 text-[9px] tracking-widest-3xl uppercase mb-8 font-extralight">
               Contacto
             </h4>
-            <div className="space-y-4 text-cream-200/25 text-sm font-extralight">
+            <div className="space-y-4 text-cream-200/90 text-sm font-extralight">
               <p>Av. Lázaro Cárdenas, No. 15-11</p>
               <p>Chilpancingo, Guerrero, México</p>
               <div className="h-px w-10 bg-white/[0.03] my-2" />
               <a
                 href="tel:+527471090227"
-                className="block hover:text-gold-400/50 transition-colors duration-500"
+                className="block hover:text-gold-400/85 transition-colors duration-500"
               >
                 +52 747 109 0227
               </a>
               <a
                 href="mailto:contacto.puabv@gmail.com"
-                className="block hover:text-gold-400/50 transition-colors duration-500"
+                className="block hover:text-gold-400/85 transition-colors duration-500"
               >
                 contacto.puabv@gmail.com
               </a>
@@ -91,7 +91,7 @@ export function Footer() {
 
         {/* Bottom bar — extreme refinement */}
         <div className="mt-12 md:mt-28 pt-8 md:pt-10 border-t border-white/[0.03] flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-cream-200/10 text-[11px] font-extralight tracking-wider">
+          <p className="text-cream-200/90 text-[11px] font-extralight tracking-wider">
             &copy; {new Date().getFullYear()} PÚA Brasa y Vino. Todos los
             derechos reservados.
           </p>

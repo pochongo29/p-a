@@ -42,7 +42,7 @@ export function WineSection() {
             <div className="absolute -bottom-6 -right-6 w-36 h-36 border-b border-r border-gold-500/10" />
             {/* Small floating detail */}
             <div className="absolute top-8 -left-4 md:-left-8">
-              <span className="text-[9px] tracking-widest-2xl text-gold-500/25 uppercase font-extralight [writing-mode:vertical-lr]">
+              <span className="text-[9px] tracking-widest-2xl text-gold-500/65 uppercase font-extralight [writing-mode:vertical-lr]">
                 La Cava
               </span>
             </div>
@@ -56,12 +56,12 @@ export function WineSection() {
             <h2 className="heading-glow font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-cream-100 font-light leading-none mb-10 md:mb-12">
               Vinos que
               <br />
-              <span className="text-gold-400/80 italic">cuentan historias</span>
+              <span className="text-gold-400 italic">cuentan historias</span>
             </h2>
 
             <div className="h-px w-16 bg-gold-500/20 mb-10" />
 
-            <div className="space-y-5 md:space-y-7 text-cream-300/70 font-extralight leading-[1.9] text-[15px] md:text-base max-w-lg">
+            <div className="space-y-5 md:space-y-7 text-cream-300/88 font-extralight leading-[1.9] text-[15px] md:text-base max-w-lg">
               <p>
                 Nuestra cava reúne más de cien etiquetas seleccionadas de las
                 regiones vinícolas más prestigiosas del mundo. Desde tintos
@@ -79,7 +79,7 @@ export function WineSection() {
               {WINE_CATEGORIES.map((cat) => (
                 <span
                   key={cat}
-                  className="px-5 py-2.5 border border-white/[0.04] text-cream-200/30 text-[10px] tracking-widest-xl uppercase font-extralight hover:border-gold-500/20 hover:text-gold-400/60 transition-all duration-700 cursor-default"
+                  className="px-5 py-2.5 border border-white/[0.04] text-cream-200/70 text-[10px] tracking-widest-xl uppercase font-extralight hover:border-gold-500/20 hover:text-gold-400/90 transition-all duration-700 cursor-default"
                 >
                   {cat}
                 </span>

@@ -27,7 +27,7 @@ export function GallerySection() {
         <div className="mb-10 md:mb-32 observe-fade">
           <div className="flex items-end justify-between flex-col md:flex-row gap-8">
             <div>
-              <span className="text-gold-500/50 text-[10px] tracking-widest-3xl uppercase font-extralight block mb-6">
+              <span className="text-gold-500/90 text-[10px] tracking-widest-3xl uppercase font-extralight block mb-6">
                 Momentos
               </span>
               <h2 className="heading-glow font-serif text-4xl md:text-7xl lg:text-8xl text-cream-100 font-light leading-none">
@@ -66,7 +66,7 @@ export function GallerySection() {
               <div className="absolute inset-0 flex items-end justify-start p-4 md:p-8 opacity-0 group-hover:opacity-100 transition-all duration-700">
                 <div className="translate-y-6 group-hover:translate-y-0 transition-transform duration-700 ease-out">
                   <div className="h-px w-8 bg-gold-500/40 mb-3" />
-                  <span className="text-gold-400/80 text-[10px] md:text-[11px] tracking-widest-xl uppercase font-extralight">
+                  <span className="text-gold-400 text-[10px] md:text-[11px] tracking-widest-xl uppercase font-extralight">
                     {img.label}
                   </span>
                 </div>

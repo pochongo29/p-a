@@ -34,7 +34,7 @@ export function ReservationSection() {
       <div className="absolute bottom-16 right-16 w-24 h-24 border-b border-r border-gold-500/8 hidden md:block" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center observe-fade">
-        <span className="text-gold-500/50 text-[10px] tracking-widest-3xl uppercase font-extralight block mb-10">
+        <span className="text-gold-500/90 text-[10px] tracking-widest-3xl uppercase font-extralight block mb-10">
           Te esperamos
         </span>
 
@@ -42,12 +42,12 @@ export function ReservationSection() {
         <h2 className="heading-glow font-serif text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl text-cream-100 font-light leading-[0.95] mb-10">
           Reserva tu
           <br />
-          <span className="text-gold-400/80 italic">experiencia</span>
+          <span className="text-gold-400 italic">experiencia</span>
         </h2>
 
         <div className="h-px w-16 bg-gold-500/20 mx-auto mb-10" />
 
-        <p className="text-cream-200/60 font-extralight text-base md:text-lg max-w-xl mx-auto mb-12 leading-relaxed">
+        <p className="text-cream-200/90 font-extralight text-base md:text-lg max-w-xl mx-auto mb-12 leading-relaxed">
           Asegura tu mesa y prepárate para vivir una velada inolvidable. Para
           grupos especiales o eventos privados, contáctanos directamente.
         </p>
@@ -74,7 +74,7 @@ export function ReservationSection() {
           {/* Phone CTA */}
           <a
             href="tel:+527471090227"
-            className="flex items-center justify-center gap-4 w-full sm:w-auto px-10 sm:px-14 py-4 border border-cream-200/10 text-cream-200/50 text-[10px] tracking-widest-2xl uppercase font-extralight hover:border-gold-500/30 hover:text-gold-400/80 transition-all duration-700 touch-manipulation"
+            className="flex items-center justify-center gap-4 w-full sm:w-auto px-10 sm:px-14 py-4 border border-cream-200/10 text-cream-200/90 text-[10px] tracking-widest-2xl uppercase font-extralight hover:border-gold-500/30 hover:text-gold-400 transition-all duration-700 touch-manipulation"
           >
             <svg
               className="w-3.5 h-3.5"

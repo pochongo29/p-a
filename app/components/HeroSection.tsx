@@ -116,7 +116,7 @@ export function HeroSection() {
           </a>
           <a
             href="#carta"
-            className="w-full sm:w-auto text-center px-10 sm:px-14 py-4 border border-cream-200/10 text-cream-200/50 text-[10px] tracking-widest-2xl uppercase font-extralight hover:border-gold-500/40 hover:text-gold-400 transition-all duration-700 touch-manipulation"
+            className="w-full sm:w-auto text-center px-10 sm:px-14 py-4 border border-cream-200/10 text-cream-200/90 text-[10px] tracking-widest-2xl uppercase font-extralight hover:border-gold-500/40 hover:text-gold-400 transition-all duration-700 touch-manipulation"
           >
             Explorar Carta
           </a>
@@ -126,7 +126,7 @@ export function HeroSection() {
       {/* Bottom scroll indicator — more elegant */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-fade-in [animation-delay:1600ms]">
         <div className="flex flex-col items-center gap-4">
-          <span className="text-[9px] tracking-widest-3xl text-cream-200/20 uppercase font-extralight">
+          <span className="text-[9px] tracking-widest-3xl text-cream-200/90 uppercase font-extralight">
             Descubre
           </span>
           <div className="relative w-px h-16">

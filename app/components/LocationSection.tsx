@@ -25,10 +25,10 @@ export function LocationSection() {
 
             {/* Address */}
             <div className="mb-12">
-              <h3 className="text-gold-400/60 text-[10px] tracking-widest-2xl uppercase font-extralight mb-5">
+              <h3 className="text-gold-400/90 text-[10px] tracking-widest-2xl uppercase font-extralight mb-5">
                 Dirección
               </h3>
-              <p className="text-cream-200/50 font-extralight leading-[2] text-base">
+              <p className="text-cream-200/90 font-extralight leading-[2] text-base">
                 Av. Lázaro Cárdenas, C. Eduardo Mendoza
                 <br />
                 No. 15-11, Lote 35
@@ -41,7 +41,7 @@ export function LocationSection() {
 
             {/* Hours */}
             <div className="mb-12">
-              <h3 className="text-gold-400/60 text-[10px] tracking-widest-2xl uppercase font-extralight mb-5">
+              <h3 className="text-gold-400/90 text-[10px] tracking-widest-2xl uppercase font-extralight mb-5">
                 Horario
               </h3>
               <div className="space-y-4">
@@ -53,14 +53,14 @@ export function LocationSection() {
                     key={schedule.day}
                     className="flex items-center justify-between max-w-sm border-b border-white/[0.03] pb-4"
                   >
-                    <span className="text-cream-200/50 font-extralight text-sm">
+                    <span className="text-cream-200/90 font-extralight text-sm">
                       {schedule.day}
                     </span>
                     <span
                       className={`font-extralight text-sm ${
                         schedule.hours === "Cerrado"
                           ? "text-wine-500/50 italic"
-                          : "text-cream-100/70"
+                          : "text-cream-100/92"
                       }`}
                     >
                       {schedule.hours}
@@ -72,16 +72,16 @@ export function LocationSection() {
 
             {/* Contact */}
             <div>
-              <h3 className="text-gold-400/60 text-[10px] tracking-widest-2xl uppercase font-extralight mb-5">
+              <h3 className="text-gold-400/90 text-[10px] tracking-widest-2xl uppercase font-extralight mb-5">
                 Contacto
               </h3>
               <div className="space-y-4">
                 <a
                   href="tel:+527471090227"
-                  className="flex items-center gap-4 text-cream-200/50 font-extralight hover:text-gold-400/80 transition-colors duration-500 group text-sm"
+                  className="flex items-center gap-4 text-cream-200/90 font-extralight hover:text-gold-400 transition-colors duration-500 group text-sm"
                 >
                   <svg
-                    className="w-3.5 h-3.5 text-gold-500/30 group-hover:text-gold-400/60 transition-colors duration-500"
+                    className="w-3.5 h-3.5 text-gold-500/68 group-hover:text-gold-400/90 transition-colors duration-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -97,10 +97,10 @@ export function LocationSection() {
                 </a>
                 <a
                   href="mailto:contacto.puabv@gmail.com"
-                  className="flex items-center gap-4 text-cream-200/50 font-extralight hover:text-gold-400/80 transition-colors duration-500 group text-sm"
+                  className="flex items-center gap-4 text-cream-200/90 font-extralight hover:text-gold-400 transition-colors duration-500 group text-sm"
                 >
                   <svg
-                    className="w-3.5 h-3.5 text-gold-500/30 group-hover:text-gold-400/60 transition-colors duration-500"
+                    className="w-3.5 h-3.5 text-gold-500/68 group-hover:text-gold-400/90 transition-colors duration-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
