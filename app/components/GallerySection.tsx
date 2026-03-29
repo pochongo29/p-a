@@ -21,16 +21,16 @@ const GALLERY_ITEMS = [
 
 export function GallerySection() {
   return (
-    <section id="galeria" className="relative py-32 md:py-48 bg-brand-dark overflow-hidden">
+    <section id="galeria" className="relative py-20 md:py-48 bg-brand-dark overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         {/* Section header — dramatic editorial */}
-        <div className="mb-20 md:mb-32 observe-fade">
+        <div className="mb-10 md:mb-32 observe-fade">
           <div className="flex items-end justify-between flex-col md:flex-row gap-8">
             <div>
               <span className="text-gold-500/50 text-[10px] tracking-widest-3xl uppercase font-extralight block mb-6">
                 Momentos
               </span>
-              <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl text-cream-100 font-light leading-none">
+              <h2 className="heading-glow font-serif text-4xl md:text-7xl lg:text-8xl text-cream-100 font-light leading-none">
                 Galería
               </h2>
             </div>

@@ -29,6 +29,11 @@ export const metadata: Metadata = {
     "Experiencia gastronómica de autor. Cortes premium a la brasa, mariscos contemporáneos y una selecta carta de vinos. Reserva tu mesa en PÚA Brasa y Vino.",
   keywords:
     "PÚA, Brasa y Vino, restaurante Chilpancingo, fine dining, cortes premium, vino, steakhouse, cocina contemporánea",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    viewportFit: "cover",
+  },
   openGraph: {
     title: "PÚA Brasa y Vino | Restaurante Premium",
     description:

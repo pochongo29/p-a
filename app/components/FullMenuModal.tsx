@@ -225,7 +225,7 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
       {/* Panel */}
       <div className="relative w-full max-w-5xl mx-auto overflow-y-auto bg-brand-black/80 border-x border-white/[0.03]">
         {/* Sticky header — more refined */}
-        <div className="sticky top-0 z-10 bg-brand-black/95 backdrop-blur-xl border-b border-white/[0.04] px-6 md:px-16 py-6 flex items-center justify-between">
+        <div className="sticky top-0 z-10 bg-brand-black/95 backdrop-blur-xl border-b border-white/[0.04] px-4 sm:px-6 md:px-16 py-4 md:py-6 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <span className="font-serif text-xl md:text-2xl text-cream-100/80 tracking-wider font-light">
               PÚA
@@ -248,7 +248,7 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
         </div>
 
         {/* Menu content — more generous spacing */}
-        <div className="px-6 md:px-16 py-16 md:py-24 space-y-20 md:space-y-28">
+        <div className="px-4 sm:px-6 md:px-16 py-10 md:py-24 space-y-14 md:space-y-28">
           {/* Intro line */}
           <div className="text-center">
             <div className="h-px w-16 bg-gold-500/20 mx-auto mb-10" />
@@ -268,14 +268,14 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
                 <span className="text-gold-500/40 text-[9px] tracking-widest-3xl uppercase font-extralight">
                   {section.label}
                 </span>
-                <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-cream-100/90 mt-3 font-light">
+                <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl text-cream-100/90 mt-3 font-light">
                   {section.category}
                 </h3>
                 <div className="h-px w-12 bg-gold-500/20 mt-6" />
               </div>
 
               {/* Items grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 md:gap-y-10">
                 {section.items.map((item) => (
                   <div
                     key={item.name}
@@ -291,7 +291,7 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
                         </span>
                       )}
                     </div>
-                    <p className="text-cream-300/30 text-sm font-extralight leading-[1.8]">
+                    <p className="text-cream-300/60 text-sm font-extralight leading-[1.8]">
                       {item.description}
                     </p>
                   </div>

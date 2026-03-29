@@ -43,7 +43,7 @@ export function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="relative py-36 md:py-52 bg-brand-charcoal overflow-hidden">
+    <section className="relative py-20 md:py-52 bg-brand-charcoal overflow-hidden">
       {/* Decorative top/bottom lines */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/10 to-transparent" />
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/10 to-transparent" />
@@ -61,14 +61,14 @@ export function TestimonialsSection() {
 
       <div className="max-w-5xl mx-auto px-6 md:px-16 text-center">
         {/* Section header — minimal */}
-        <div className="mb-20 md:mb-28 observe-fade">
+        <div className="mb-10 md:mb-28 observe-fade">
           <span className="text-gold-500/50 text-[10px] tracking-widest-3xl uppercase font-extralight">
             Testimonios
           </span>
         </div>
 
         {/* Testimonial — dramatic viewport-filling quote */}
-        <div className="relative min-h-[350px] md:min-h-[320px] observe-fade">
+        <div className="relative min-h-[380px] sm:min-h-[320px] observe-fade">
           {TESTIMONIALS.map((testimonial, index) => (
             <div
               key={index}
@@ -89,12 +89,12 @@ export function TestimonialsSection() {
               </div>
 
               {/* Quote — much larger, editorial */}
-              <blockquote className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-cream-100/80 leading-[1.3] italic font-light max-w-4xl">
+              <blockquote className="font-serif text-xl sm:text-3xl md:text-4xl lg:text-5xl text-cream-100/90 leading-[1.4] italic font-light max-w-4xl">
                 &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
 
               {/* Author — refined */}
-              <div className="mt-12 md:mt-16">
+              <div className="mt-8 md:mt-16">
                 <div className="h-px w-10 bg-gold-500/20 mx-auto mb-6" />
                 <p className="text-gold-400/70 text-xs font-light tracking-wider">
                   {testimonial.author}

@@ -12,7 +12,7 @@ export function ReservationSection() {
   return (
     <section
       id="reservar"
-      className="relative py-40 md:py-56 overflow-hidden"
+      className="relative py-24 md:py-56 overflow-hidden"
     >
       {/* Background image */}
       <div className="absolute inset-0">
@@ -39,7 +39,7 @@ export function ReservationSection() {
         </span>
 
         {/* Enormous heading — the climax */}
-        <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-cream-100 font-light leading-[0.95] mb-10">
+        <h2 className="heading-glow font-serif text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl text-cream-100 font-light leading-[0.95] mb-10">
           Reserva tu
           <br />
           <span className="text-gold-400/80 italic">experiencia</span>
@@ -47,18 +47,18 @@ export function ReservationSection() {
 
         <div className="h-px w-16 bg-gold-500/20 mx-auto mb-10" />
 
-        <p className="text-cream-200/35 font-extralight text-base md:text-lg max-w-xl mx-auto mb-16 leading-relaxed">
+        <p className="text-cream-200/60 font-extralight text-base md:text-lg max-w-xl mx-auto mb-12 leading-relaxed">
           Asegura tu mesa y prepárate para vivir una velada inolvidable. Para
           grupos especiales o eventos privados, contáctanos directamente.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 w-full max-w-sm sm:max-w-none mx-auto">
           {/* WhatsApp CTA — the primary action */}
           <a
             href="https://wa.me/527471090227?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20P%C3%9AA%20Brasa%20y%20Vino"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex items-center gap-4 px-14 py-4 bg-gold-500/90 text-brand-black text-[10px] tracking-widest-2xl uppercase font-medium overflow-hidden transition-all duration-700"
+            className="group relative flex items-center justify-center gap-4 w-full sm:w-auto px-10 sm:px-14 py-4 bg-gold-500/90 text-brand-black text-[10px] tracking-widest-2xl uppercase font-medium overflow-hidden transition-all duration-700 touch-manipulation"
           >
             <span className="absolute inset-0 bg-gold-400 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]" />
             <svg
@@ -74,7 +74,7 @@ export function ReservationSection() {
           {/* Phone CTA */}
           <a
             href="tel:+527471090227"
-            className="flex items-center gap-4 px-14 py-4 border border-cream-200/10 text-cream-200/50 text-[10px] tracking-widest-2xl uppercase font-extralight hover:border-gold-500/30 hover:text-gold-400/80 transition-all duration-700"
+            className="flex items-center justify-center gap-4 w-full sm:w-auto px-10 sm:px-14 py-4 border border-cream-200/10 text-cream-200/50 text-[10px] tracking-widest-2xl uppercase font-extralight hover:border-gold-500/30 hover:text-gold-400/80 transition-all duration-700 touch-manipulation"
           >
             <svg
               className="w-3.5 h-3.5"

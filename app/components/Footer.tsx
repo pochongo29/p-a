@@ -18,8 +18,8 @@ export function Footer() {
       {/* Top divider — ultra-thin */}
       <div className="h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-16 py-20 md:py-28">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+      <div className="max-w-7xl mx-auto px-6 md:px-16 py-14 md:py-28">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
           {/* Brand column — with logo */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-4 mb-6">
@@ -40,7 +40,7 @@ export function Footer() {
                 </p>
               </div>
             </div>
-            <p className="text-cream-200/20 text-sm font-extralight mt-4 leading-[1.9] max-w-xs">
+            <p className="text-cream-200/45 text-sm font-extralight mt-4 leading-[1.9] max-w-xs">
               Una experiencia gastronómica donde el fuego, la tradición y la
               innovación se encuentran.
             </p>
@@ -56,7 +56,7 @@ export function Footer() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="block text-cream-200/25 text-sm font-extralight hover:text-gold-400/60 transition-colors duration-500"
+                  className="block text-cream-200/50 text-sm font-extralight hover:text-gold-400/60 transition-colors duration-500 touch-manipulation"
                 >
                   {link.label}
                 </a>
@@ -90,7 +90,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar — extreme refinement */}
-        <div className="mt-20 md:mt-28 pt-10 border-t border-white/[0.03] flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-12 md:mt-28 pt-8 md:pt-10 border-t border-white/[0.03] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-cream-200/10 text-[11px] font-extralight tracking-wider">
             &copy; {new Date().getFullYear()} PÚA Brasa y Vino. Todos los
             derechos reservados.

@@ -9,17 +9,17 @@ import { IMAGES } from "./images";
 
 export function ExperienceSection() {
   return (
-    <section id="experiencia" className="relative py-32 md:py-48 bg-brand-black overflow-hidden">
+    <section id="experiencia" className="relative py-20 md:py-48 bg-brand-black overflow-hidden">
       {/* Subtle decorative line at top */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         {/* Section header — much more dramatic */}
-        <div className="text-center mb-24 md:mb-40 observe-fade">
-          <span className="text-gold-500/60 text-[10px] tracking-widest-3xl uppercase font-extralight block mb-6">
+        <div className="text-center mb-14 md:mb-40 observe-fade">
+          <span className="shimmer-gold text-[10px] tracking-widest-3xl uppercase font-extralight block mb-6">
             Nuestra Esencia
           </span>
-          <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl text-cream-100 font-light leading-none">
+          <h2 className="heading-glow font-serif text-5xl md:text-7xl lg:text-8xl text-cream-100 font-light leading-none">
             La Experiencia PÚA
           </h2>
           <div className="h-px w-16 bg-gold-500/30 mx-auto mt-10" />
@@ -29,14 +29,14 @@ export function ExperienceSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-start">
           {/* Narrative — takes 5 columns for asymmetry */}
           <div className="observe-fade order-2 lg:order-1 lg:col-span-5 lg:pt-12">
-            <p className="text-gold-500/50 text-[10px] tracking-widest-3xl uppercase font-extralight mb-8">
+            <p className="shimmer-gold text-[10px] tracking-widest-3xl uppercase font-extralight mb-8">
               Cocina de autor
             </p>
-            <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-cream-100 font-light leading-[1.15] mb-10">
+            <h3 className="heading-glow font-serif text-3xl md:text-4xl lg:text-5xl text-cream-100 font-light leading-[1.15] mb-10">
               Fuego, tradición y
-              <span className="text-gold-400 italic block mt-1"> vanguardia</span>
+              <span className="shimmer-gold italic block mt-1"> vanguardia</span>
             </h3>
-            <div className="space-y-7 text-cream-300/50 font-extralight leading-[1.9] text-[15px] md:text-base">
+            <div className="space-y-7 text-cream-300/75 font-extralight leading-[1.9] text-[15px] md:text-base">
               <p>
                 En PÚA, cada platillo nace del diálogo entre el fuego y los
                 ingredientes más selectos. Nuestros cortes premium son tratados
@@ -57,17 +57,17 @@ export function ExperienceSection() {
             </div>
 
             {/* Signature stats — dramatically larger */}
-            <div className="grid grid-cols-3 gap-6 mt-16 pt-12 border-t border-white/[0.04]">
+            <div className="grid grid-cols-3 gap-3 md:gap-6 mt-12 md:mt-16 pt-10 md:pt-12 border-t border-white/[0.04]">
               {[
                 { number: "5.0", label: "TripAdvisor" },
                 { number: "100+", label: "Etiquetas de Vino" },
                 { number: "2023", label: "Fundación" },
               ].map((stat) => (
                 <div key={stat.label} className="observe-fade">
-                  <span className="font-serif text-4xl md:text-5xl lg:text-6xl text-gold-400/80 font-light leading-none block">
+                  <span className="shimmer-gold font-serif text-3xl md:text-5xl lg:text-6xl font-light leading-none block">
                     {stat.number}
                   </span>
-                  <p className="text-cream-200/30 text-[9px] md:text-[10px] tracking-widest-2xl uppercase mt-4 font-extralight">
+                  <p className="text-cream-200/60 text-[9px] md:text-[10px] tracking-widest-2xl uppercase mt-4 font-extralight">
                     {stat.label}
                   </p>
                 </div>

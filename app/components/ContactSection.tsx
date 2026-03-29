@@ -24,21 +24,21 @@ const SOCIALS = [
 
 export function ContactSection() {
   return (
-    <section id="contacto" className="relative py-28 md:py-40 bg-brand-dark overflow-hidden">
+    <section id="contacto" className="relative py-16 md:py-40 bg-brand-dark overflow-hidden">
       {/* Top divider line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         <div className="text-center observe-fade">
-          <span className="text-gold-500/50 text-[10px] tracking-widest-3xl uppercase font-extralight block mb-6">
+          <span className="shimmer-gold text-[10px] tracking-widest-3xl uppercase font-extralight block mb-6">
             Conecta con nosotros
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-cream-100 font-light mb-16">
+          <h2 className="heading-glow font-serif text-3xl md:text-5xl lg:text-6xl text-cream-100 font-light mb-10 md:mb-16">
             Síguenos
           </h2>
 
           {/* Social links — more geometric, refined */}
-          <div className="flex items-center justify-center gap-10 md:gap-16 mb-16">
+          <div className="flex items-center justify-center gap-8 md:gap-16 mb-10 md:mb-16">
             {SOCIALS.map((social) => (
               <a
                 key={social.label}
@@ -48,16 +48,16 @@ export function ContactSection() {
                 className="group flex flex-col items-center gap-4"
                 aria-label={social.label}
               >
-                <div className="w-16 h-16 flex items-center justify-center border border-white/[0.04] group-hover:border-gold-500/25 group-hover:bg-gold-500/[0.03] transition-all duration-700">
+                <div className="w-16 h-16 md:w-16 md:h-16 flex items-center justify-center border border-white/[0.06] group-hover:border-gold-500/25 group-hover:bg-gold-500/[0.03] transition-all duration-700 touch-manipulation">
                   <svg
-                    className="w-4.5 h-4.5 text-cream-200/30 group-hover:text-gold-400/70 transition-colors duration-700"
+                    className="w-5 h-5 text-cream-200/50 group-hover:text-gold-400/70 transition-colors duration-700"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
                     <path d={social.icon} />
                   </svg>
                 </div>
-                <span className="text-[9px] tracking-widest-xl uppercase text-cream-200/15 group-hover:text-gold-400/40 transition-colors duration-500 font-extralight">
+                <span className="text-[9px] tracking-widest-xl uppercase text-cream-200/40 group-hover:text-gold-400/70 transition-colors duration-500 font-extralight">
                   {social.label}
                 </span>
               </a>

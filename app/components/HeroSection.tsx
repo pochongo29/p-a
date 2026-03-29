@@ -13,21 +13,31 @@ import { IMAGES } from "./images";
 
 export function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isMobile]);
 
-  const parallaxOffset = scrollY * 0.35;
-  const opacityFade = Math.max(0, 1 - scrollY / 700);
-  const logoScale = 1 + scrollY * 0.0003;
+  const parallaxOffset = isMobile ? 0 : scrollY * 0.35;
+  const opacityFade = isMobile ? 1 : Math.max(0, 1 - scrollY / 700);
+  const logoScale = isMobile ? 1 : 1 + scrollY * 0.0003;
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[100svh] flex items-center justify-center overflow-hidden"
     >
       {/* Background Image with parallax */}
       <div
@@ -67,7 +77,7 @@ export function HeroSection() {
         {/* Pre-title accent with horizontal rules */}
         <div className="animate-fade-in mb-8 flex items-center justify-center gap-6">
           <div className="h-px w-12 md:w-20 bg-gradient-to-r from-transparent to-gold-500/40" />
-          <span className="inline-block text-gold-500/70 text-[10px] md:text-[11px] tracking-widest-3xl uppercase font-extralight">
+          <span className="shimmer-gold inline-block text-[10px] md:text-[11px] tracking-widest-3xl uppercase font-extralight">
             Chilpancingo de los Bravo, Guerrero
           </span>
           <div className="h-px w-12 md:w-20 bg-gradient-to-l from-transparent to-gold-500/40" />
@@ -89,24 +99,24 @@ export function HeroSection() {
         </div>
 
         {/* Tagline — bigger, more editorial */}
-        <p className="animate-fade-in [animation-delay:600ms] text-cream-200/50 text-lg md:text-xl lg:text-2xl font-extralight tracking-wide max-w-2xl mx-auto mb-16 leading-relaxed">
+        <p className="animate-fade-in [animation-delay:600ms] text-flicker text-cream-200/80 text-lg md:text-xl lg:text-2xl font-extralight tracking-wide max-w-2xl mx-auto mb-16 leading-relaxed">
           Donde el fuego transforma la materia prima en arte culinario.
           <br className="hidden md:block" />
           Una experiencia gastronómica de autor.
         </p>
 
         {/* CTAs — more refined, thinner borders */}
-        <div className="animate-fade-in-up [animation-delay:900ms] flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+        <div className="animate-fade-in-up [animation-delay:900ms] flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 w-full px-4 sm:px-0">
           <a
             href="#reservar"
-            className="group relative px-14 py-4 bg-gold-500/90 text-brand-black text-[10px] tracking-widest-2xl uppercase font-medium overflow-hidden transition-all duration-700"
+            className="group relative w-full sm:w-auto text-center px-10 sm:px-14 py-4 bg-gold-500/90 text-brand-black text-[10px] tracking-widest-2xl uppercase font-medium overflow-hidden transition-all duration-700 touch-manipulation"
           >
             <span className="absolute inset-0 bg-gold-400 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]" />
             <span className="relative z-10">Reservar Mesa</span>
           </a>
           <a
             href="#carta"
-            className="px-14 py-4 border border-cream-200/10 text-cream-200/50 text-[10px] tracking-widest-2xl uppercase font-extralight hover:border-gold-500/40 hover:text-gold-400 transition-all duration-700"
+            className="w-full sm:w-auto text-center px-10 sm:px-14 py-4 border border-cream-200/10 text-cream-200/50 text-[10px] tracking-widest-2xl uppercase font-extralight hover:border-gold-500/40 hover:text-gold-400 transition-all duration-700 touch-manipulation"
           >
             Explorar Carta
           </a>

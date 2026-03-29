@@ -74,6 +74,10 @@ const config: Config = {
         "letter-spread": "letterSpread 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards",
         "float": "float 6s ease-in-out infinite",
         "pulse-subtle": "pulseSubtle 3s ease-in-out infinite",
+        "shimmer-sweep": "shimmerSweep 4s linear infinite",
+        "heading-glow": "headingGlow 5s ease-in-out infinite",
+        "gold-breathe": "goldBreathe 4s ease-in-out infinite",
+        "text-flicker": "textFlicker 6s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -111,6 +115,24 @@ const config: Config = {
         pulseSubtle: {
           "0%, 100%": { opacity: "0.6" },
           "50%": { opacity: "1" },
+        },
+        shimmerSweep: {
+          "0%": { backgroundPosition: "0% center" },
+          "100%": { backgroundPosition: "200% center" },
+        },
+        headingGlow: {
+          "0%, 100%": { filter: "brightness(1)" },
+          "50%": { filter: "brightness(1.18) drop-shadow(0 0 24px rgba(200,162,78,0.22))" },
+        },
+        goldBreathe: {
+          "0%, 100%": { opacity: "0.75" },
+          "50%": { opacity: "1" },
+        },
+        textFlicker: {
+          "0%, 100%": { filter: "brightness(1)" },
+          "30%": { filter: "brightness(1.12)" },
+          "60%": { filter: "brightness(1.06)" },
+          "80%": { filter: "brightness(1.15)" },
         },
       },
     },

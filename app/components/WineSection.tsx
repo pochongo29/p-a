@@ -18,7 +18,7 @@ const WINE_CATEGORIES = [
 
 export function WineSection() {
   return (
-    <section className="relative py-32 md:py-48 bg-brand-black overflow-hidden">
+    <section className="relative py-20 md:py-48 bg-brand-black overflow-hidden">
       {/* Subtle burgundy atmospheric glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(139,32,53,0.06)_0%,transparent_60%)]" />
 
@@ -50,10 +50,10 @@ export function WineSection() {
 
           {/* Wine narrative — much larger heading */}
           <div className="observe-fade observe-fade-delay-1 lg:col-span-7 lg:pl-8 lg:pt-8">
-            <span className="text-gold-500/50 text-[10px] tracking-widest-3xl uppercase font-extralight block mb-8">
+            <span className="shimmer-gold text-[10px] tracking-widest-3xl uppercase font-extralight block mb-6 md:mb-8">
               La Cava
             </span>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-cream-100 font-light leading-none mb-12">
+            <h2 className="heading-glow font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-cream-100 font-light leading-none mb-10 md:mb-12">
               Vinos que
               <br />
               <span className="text-gold-400/80 italic">cuentan historias</span>
@@ -61,7 +61,7 @@ export function WineSection() {
 
             <div className="h-px w-16 bg-gold-500/20 mb-10" />
 
-            <div className="space-y-7 text-cream-300/40 font-extralight leading-[1.9] text-[15px] md:text-base max-w-lg">
+            <div className="space-y-5 md:space-y-7 text-cream-300/70 font-extralight leading-[1.9] text-[15px] md:text-base max-w-lg">
               <p>
                 Nuestra cava reúne más de cien etiquetas seleccionadas de las
                 regiones vinícolas más prestigiosas del mundo. Desde tintos

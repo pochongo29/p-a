@@ -13,12 +13,17 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Enable momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
   }
 
   body {
     background-color: #080706;
     color: #f5edd8;
     cursor: default;
+    /* Safe area support for notched phones */
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 
   /* Custom cursor for desktop — subtle premium dot */
@@ -214,6 +219,40 @@
 
   .text-clip-reveal.is-visible > span {
     transform: translateY(0);
+  }
+
+  /* Gold shimmer sweep — animated gradient on text */
+  .shimmer-gold {
+    background: linear-gradient(
+      105deg,
+      #B8922E 0%,
+      #C8A24E 25%,
+      #FFD966 45%,
+      #FFCC33 50%,
+      #FFD966 55%,
+      #C8A24E 75%,
+      #B8922E 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmerSweep 4s linear infinite;
+  }
+
+  /* Heading glow pulse — subtle breathing brightness */
+  .heading-glow {
+    animation: headingGlow 5s ease-in-out infinite;
+  }
+
+  /* Gold breathe — opacity pulse on gold elements */
+  .gold-breathe {
+    animation: goldBreathe 4s ease-in-out infinite;
+  }
+
+  /* Text flicker — warmth & life on key body text */
+  .text-flicker {
+    animation: textFlicker 6s ease-in-out infinite;
   }
 }
 

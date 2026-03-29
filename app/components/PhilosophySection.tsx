@@ -44,7 +44,7 @@ export function PhilosophySection() {
             {/* Small gold accent line */}
             <div className="h-px w-20 bg-gold-500/30 mb-12" />
 
-            <blockquote className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-cream-100/90 leading-[1.15] mb-14 italic font-light">
+            <blockquote className="heading-glow font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-cream-100 leading-[1.15] mb-14 italic font-light">
               La brasa no miente. Revela la verdad de cada ingrediente,
               lo eleva o lo delata. Nuestro trabajo es honrar ese fuego.
             </blockquote>
@@ -52,10 +52,10 @@ export function PhilosophySection() {
             <div className="flex items-center gap-6">
               <div className="h-px w-16 bg-gold-500/40" />
               <div>
-                <p className="text-gold-400/80 text-sm font-light tracking-wider">
+                <p className="shimmer-gold text-sm font-light tracking-wider">
                   Filosofía de PÚA
                 </p>
-                <p className="text-cream-200/25 text-[10px] tracking-widest-2xl uppercase font-extralight mt-2">
+                <p className="text-cream-200/60 text-[10px] tracking-widest-2xl uppercase font-extralight mt-2">
                   Cocina de Autor &middot; Chilpancingo
                 </p>
               </div>
