@@ -51,7 +51,7 @@ export function Navbar() {
         {/* Gold accent line on scroll */}
         <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent transition-opacity duration-500 ${scrolled ? "opacity-100" : "opacity-0"}`} />
 
-        <div className="px-5 md:px-16 py-4 md:py-5 flex items-center justify-between max-w-7xl mx-auto">
+        <div className="px-5 md:px-16 pt-6 pb-4 md:py-5 flex items-center justify-between max-w-7xl mx-auto">
           {/* Logo */}
           <a href="#" className="group flex items-center gap-3 z-[60]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
