@@ -163,7 +163,7 @@ const MENU_NORMAL: Section[] = [
         description: "Arroz de grano largo infusionado en azafrán de La Mancha con hierbas finas.",
         tag: null,
         price: "$125",
-        image: u("1536304993881-ff86d42818ef"),
+        image: u("1633337474564-cb5f6e2e72cd"),
       },
     ],
   },
@@ -176,7 +176,7 @@ const MENU_NORMAL: Section[] = [
         description: "Bizcocho tibio de chocolate 70% cacao con corazón fundente, helado de vainilla de Madagascar y caramelo salado artesanal.",
         tag: "El favorito",
         price: "$195",
-        image: u("1541599547104-748d0ca90697"),
+        image: u("1606313564200-e75d5e31cecc"),
       },
       {
         name: "Cheesecake de Cajeta",
