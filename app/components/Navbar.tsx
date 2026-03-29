@@ -43,6 +43,7 @@ export function Navbar() {
       <nav
         ref={navRef}
         className="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-500"
+        style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
       >
         {/* Gold accent line on scroll */}
         <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent transition-opacity duration-500 ${scrolled ? "opacity-100" : "opacity-0"}`} />
