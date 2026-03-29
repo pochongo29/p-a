@@ -41,10 +41,12 @@ export function GallerySection() {
 
         {/* Cinematic asymmetric grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
-          {GALLERY_ITEMS.map((img, i) => (
+          {(() => {
+            const delayClasses = ["observe-fade-delay-1", "observe-fade-delay-2", "observe-fade-delay-3", "observe-fade-delay-4"];
+            return GALLERY_ITEMS.map((img, i) => (
             <div
               key={`${img.src}-${i}`}
-              className={`${img.span} observe-fade observe-fade-delay-${(i % 4) + 1} relative group overflow-hidden ${
+              className={`${img.span} observe-fade ${delayClasses[i % 4]} relative group overflow-hidden ${
                 img.span?.includes("row-span-2") ? "aspect-square md:aspect-auto md:min-h-[500px]" :
                 img.span?.includes("col-span-2") ? "aspect-[2/1] md:aspect-[2.5/1]" :
                 "aspect-square"
@@ -75,7 +77,7 @@ export function GallerySection() {
               {/* Fine inner border on hover */}
               <div className="absolute inset-2 border border-transparent group-hover:border-gold-500/10 transition-colors duration-700 pointer-events-none" />
             </div>
-          ))}
+          ));})()}
         </div>
       </div>
     </section>

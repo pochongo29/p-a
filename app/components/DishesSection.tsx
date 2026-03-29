@@ -89,12 +89,14 @@ export function DishesSection() {
 
           {/* Dish editorial spread — alternating layout */}
           <div className="space-y-12 md:space-y-32">
-            {DISHES.map((dish, index) => {
+            {(() => {
+              const delayClasses = ["observe-fade-delay-1", "observe-fade-delay-2", "observe-fade-delay-3"];
+              return DISHES.map((dish, index) => {
               const isEven = index % 2 === 0;
               return (
                 <article
                   key={dish.name}
-                  className={`observe-fade observe-fade-delay-${(index % 3) + 1} group grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 items-center`}
+                  className={`observe-fade ${delayClasses[index % 3]} group grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 items-center`}
                 >
                   {/* Image */}
                   <div
@@ -148,7 +150,7 @@ export function DishesSection() {
                   </div>
                 </article>
               );
-            })}
+            });})()}
           </div>
 
           {/* View full menu CTA — more refined */}

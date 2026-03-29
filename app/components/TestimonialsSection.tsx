@@ -68,7 +68,7 @@ export function TestimonialsSection() {
         </div>
 
         {/* Testimonial — dramatic viewport-filling quote */}
-        <div className="relative min-h-[380px] sm:min-h-[320px] observe-fade">
+        <div className="relative min-h-[380px] sm:min-h-[320px] observe-fade" aria-live="polite" aria-atomic="true">
           {TESTIMONIALS.map((testimonial, index) => (
             <div
               key={index}

@@ -377,3 +377,48 @@
   opacity: 0.015;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
+
+/* ========================================
+   Prefers Reduced Motion — Accesibilidad
+   Usuarios que tienen activado "Reducir movimiento"
+   en sus ajustes del sistema.
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .observe-fade,
+  .observe-fade-left,
+  .observe-fade-right,
+  .observe-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .observe-fade.is-visible,
+  .observe-fade-left.is-visible,
+  .observe-fade-right.is-visible,
+  .observe-scale.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .shimmer-gold {
+    animation: none;
+    background: linear-gradient(105deg, #C8A24E, #FFD966, #C8A24E);
+    background-size: 100% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .heading-glow,
+  .text-flicker,
+  .gold-breathe {
+    animation: none;
+  }
+
+  .text-clip-reveal > span {
+    transform: none;
+    transition: none;
+  }
+}
