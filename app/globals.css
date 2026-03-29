@@ -257,6 +257,46 @@
 }
 
 /* ========================================
+   Mobile Typography — Readability boost
+   Upgrade ultra-thin fonts to legible weights.
+   Reduce extreme letter-spacing on small text.
+   ======================================== */
+
+@media (max-width: 767px) {
+  /* font-extralight (200) → light (300) for body text */
+  .font-extralight {
+    font-weight: 300;
+  }
+
+  /* font-light (300) → normal (400) for key readable content */
+  p.font-light,
+  span.font-light {
+    font-weight: 400;
+  }
+
+  /* Tighten extreme tracking on tiny uppercase labels */
+  .tracking-widest-3xl {
+    letter-spacing: 0.2em;
+  }
+  .tracking-widest-2xl {
+    letter-spacing: 0.15em;
+  }
+  .tracking-widest-xl {
+    letter-spacing: 0.12em;
+  }
+
+  /* Subtle text shadow for cream text on dark bg */
+  .text-cream-100,
+  .text-cream-200\/90,
+  .text-cream-200\/95,
+  .text-cream-300\/85,
+  .text-cream-300\/88,
+  .text-cream-300\/90 {
+    text-shadow: 0 0 12px rgba(245, 237, 216, 0.08);
+  }
+}
+
+/* ========================================
    Custom Cursor — Premium dot follower
    Only visible on fine-pointer devices
    ======================================== */
