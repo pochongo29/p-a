@@ -294,6 +294,39 @@
   .text-cream-300\/90 {
     text-shadow: 0 0 12px rgba(245, 237, 216, 0.08);
   }
+
+  /* ── Performance: deshabilitar animaciones continuas en mobile ──
+     shimmer-gold, heading-glow, text-flicker y gold-breathe causan
+     repaints GPU constantes. En mobile se reemplazan con valores fijos. */
+  .shimmer-gold {
+    animation: none;
+    background: linear-gradient(105deg, #C8A24E, #FFD966, #C8A24E);
+    background-size: 100% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .heading-glow {
+    animation: none;
+  }
+
+  .text-flicker {
+    animation: none;
+  }
+
+  .gold-breathe {
+    animation: none;
+    opacity: 0.9;
+  }
+
+  /* Reducir duración de transiciones pesadas */
+  .observe-fade,
+  .observe-fade-left,
+  .observe-fade-right,
+  .observe-scale {
+    transition-duration: 0.6s !important;
+  }
 }
 
 /* ========================================
