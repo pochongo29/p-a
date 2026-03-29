@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { RatingStars } from "./RatingStars";
 
 /* ═══════════════════════════════════════════════
    FULL MENU MODAL — Michelin Edition
@@ -320,6 +321,7 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
                         )}
                       </div>
                     </div>
+                    <RatingStars dishId={item.name} />
                     <p className="text-cream-300/85 text-sm font-extralight leading-[1.8]">
                       {item.description}
                     </p>
