@@ -15,6 +15,14 @@
     -moz-osx-font-smoothing: grayscale;
     /* Enable momentum scrolling on iOS */
     -webkit-overflow-scrolling: touch;
+    /* Offset anchor scrolling so fixed navbar doesn't cover section headers */
+    scroll-padding-top: 80px;
+  }
+
+  @media (max-width: 767px) {
+    html {
+      scroll-padding-top: calc(68px + env(safe-area-inset-top, 0px));
+    }
   }
 
   body {

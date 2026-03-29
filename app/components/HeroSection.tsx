@@ -38,6 +38,7 @@ export function HeroSection() {
     <section
       id="hero"
       className="relative min-h-[100svh] flex items-center justify-center overflow-hidden"
+      style={isMobile ? { paddingTop: "calc(68px + env(safe-area-inset-top, 0px))" } : undefined}
     >
       {/* Background Image with parallax */}
       <div
