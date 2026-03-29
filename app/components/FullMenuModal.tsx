@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { RatingStars } from "./RatingStars";
 
 /* ═══════════════════════════════════════════════
@@ -217,18 +217,46 @@ interface FullMenuModalProps {
 }
 
 export function FullMenuModal({ onClose }: FullMenuModalProps) {
-  // Lock body scroll while modal is open
+  const panelRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Lock body scroll — fix iOS Safari (position: fixed trick)
   useEffect(() => {
+    const scrollY = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
     document.body.style.overflow = "hidden";
     return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
       document.body.style.overflow = "";
+      window.scrollTo(0, scrollY);
     };
   }, []);
 
-  // Close on Escape key
+  // Focus the close button on open
+  useEffect(() => {
+    closeButtonRef.current?.focus();
+  }, []);
+
+  // Close on Escape + basic focus trap
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") { onClose(); return; }
+      if (e.key !== "Tab") return;
+      const panel = panelRef.current;
+      if (!panel) return;
+      const focusable = panel.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey ? document.activeElement === first : document.activeElement === last) {
+        e.preventDefault();
+        (e.shiftKey ? last : first).focus();
+      }
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
@@ -241,14 +269,20 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
       aria-modal="true"
       aria-label="Carta completa de PÚA Brasa y Vino"
     >
-      {/* Backdrop */}
+      {/* Backdrop — pointer-events only on the actual backdrop area */}
       <div
         className="absolute inset-0 bg-brand-black/[0.97] backdrop-blur-2xl"
         onClick={onClose}
+        aria-hidden="true"
       />
 
       {/* Panel */}
-      <div className="relative w-full max-w-5xl mx-auto overflow-y-auto bg-brand-black/80 border-x border-white/[0.03]">
+      <div
+        ref={panelRef}
+        className="relative w-full max-w-5xl mx-auto overflow-y-auto bg-brand-black/80 border-x border-white/[0.03]"
+        style={{ overscrollBehavior: "contain", WebkitOverflowScrolling: "touch" } as React.CSSProperties}
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Sticky header — more refined */}
         <div className="sticky top-0 z-10 bg-brand-black/95 backdrop-blur-xl border-b border-white/[0.04] px-4 sm:px-6 md:px-16 py-4 md:py-6 flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -261,6 +295,7 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
             </span>
           </div>
           <button
+            ref={closeButtonRef}
             onClick={onClose}
             className="flex items-center gap-3 text-cream-200/90 hover:text-gold-400/90 transition-colors duration-500 text-[10px] tracking-widest-xl uppercase font-extralight"
             aria-label="Cerrar carta"
