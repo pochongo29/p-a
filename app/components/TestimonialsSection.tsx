@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import { IMAGES } from "./images";
 
 /* ═══════════════════════════════════════════════
    TESTIMONIALS SECTION — Michelin Edition
@@ -44,6 +46,19 @@ export function TestimonialsSection() {
 
   return (
     <section className="relative py-20 md:py-52 bg-brand-charcoal overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src={IMAGES.testimonial}
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-brand-charcoal/88" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-charcoal/60 via-transparent to-brand-charcoal/60" />
+      </div>
+
       {/* Decorative top/bottom lines */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/10 to-transparent" />
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/10 to-transparent" />

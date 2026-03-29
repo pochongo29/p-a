@@ -4,6 +4,15 @@
    Geometric social icons with sophisticated hovers.
    ═══════════════════════════════════════════════ */
 
+import Image from "next/image";
+import { IMAGES } from "./images";
+
+const MOOD_PHOTOS = [
+  { src: IMAGES.ambiance,  alt: "Ambiente del restaurante" },
+  { src: IMAGES.gallery2,  alt: "Experiencia gastronómica" },
+  { src: IMAGES.dish1,     alt: "Platillo insignia" },
+];
+
 const SOCIALS = [
   {
     label: "Facebook",
@@ -36,6 +45,22 @@ export function ContactSection() {
           <h2 className="heading-glow font-serif text-3xl md:text-5xl lg:text-6xl text-cream-100 font-light mb-10 md:mb-16">
             Síguenos
           </h2>
+
+          {/* Mood photos row */}
+          <div className="grid grid-cols-3 gap-3 md:gap-4 max-w-2xl mx-auto mb-12 md:mb-16">
+            {MOOD_PHOTOS.map((photo, i) => (
+              <div key={i} className="relative aspect-square overflow-hidden">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-60 hover:opacity-85"
+                  sizes="(max-width: 768px) 30vw, 200px"
+                />
+                <div className="absolute inset-0 border border-gold-500/10" />
+              </div>
+            ))}
+          </div>
 
           {/* Social links — more geometric, refined */}
           <div className="flex items-center justify-center gap-8 md:gap-16 mb-10 md:mb-16">

@@ -4,6 +4,9 @@
    Map with cinematic treatment.
    ═══════════════════════════════════════════════ */
 
+import Image from "next/image";
+import { IMAGES } from "./images";
+
 export function LocationSection() {
   return (
     <section className="relative py-20 md:py-48 bg-brand-black overflow-hidden">
@@ -14,6 +17,19 @@ export function LocationSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8">
           {/* Info side — 5 columns for asymmetry */}
           <div className="observe-fade lg:col-span-5">
+            {/* Atmospheric photo */}
+            <div className="relative w-full aspect-[16/7] overflow-hidden mb-10 md:mb-14">
+              <Image
+                src={IMAGES.concept}
+                alt="Interior de PÚA Brasa y Vino"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-black/70 via-brand-black/20 to-transparent" />
+              <div className="absolute inset-0 border border-gold-500/8" />
+            </div>
+
             <span className="shimmer-gold text-[10px] tracking-widest-3xl uppercase font-extralight block mb-6">
               Visítanos
             </span>
