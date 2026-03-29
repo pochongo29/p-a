@@ -153,29 +153,45 @@ export function DishesSection() {
             });})()}
           </div>
 
-          {/* View full menu CTA — more refined */}
+          {/* View full menu CTA */}
           <div className="text-center mt-14 md:mt-36 observe-fade">
             <div className="h-px w-full bg-white/[0.04] mb-16" />
-            <button
-              onClick={() => setMenuOpen(true)}
-              className="inline-flex items-center gap-4 text-gold-400/92 text-[11px] tracking-widest-xl uppercase font-extralight hover:text-gold-300 transition-all duration-500 group"
-            >
-              <span className="h-px w-8 bg-gold-500/30 group-hover:w-12 transition-all duration-500" />
-              <span>Ver carta completa</span>
-              <svg
-                className="w-4 h-4 group-hover:translate-x-3 transition-transform duration-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div className="flex flex-col items-center gap-6">
+              <button
+                onClick={() => setMenuOpen(true)}
+                className="group relative inline-flex items-center justify-center gap-5 px-12 py-5 overflow-hidden border border-gold-500/30 hover:border-gold-500/70 transition-all duration-700"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </button>
+                {/* Hover fill */}
+                <span className="absolute inset-0 bg-gold-500/0 group-hover:bg-gold-500/6 transition-colors duration-700" />
+                {/* Corner accents */}
+                <span className="absolute top-0 left-0 w-3 h-px bg-gold-500/60 group-hover:w-6 transition-all duration-500" />
+                <span className="absolute top-0 left-0 h-3 w-px bg-gold-500/60 group-hover:h-6 transition-all duration-500" />
+                <span className="absolute bottom-0 right-0 w-3 h-px bg-gold-500/60 group-hover:w-6 transition-all duration-500" />
+                <span className="absolute bottom-0 right-0 h-3 w-px bg-gold-500/60 group-hover:h-6 transition-all duration-500" />
+
+                <span className="relative flex flex-col items-center gap-1">
+                  <span className="text-gold-400 text-[10px] tracking-widest-3xl uppercase font-extralight">
+                    Explorar
+                  </span>
+                  <span className="font-serif text-cream-100 text-xl md:text-2xl font-light tracking-wide group-hover:text-gold-300 transition-colors duration-500">
+                    Carta Completa
+                  </span>
+                </span>
+
+                <svg
+                  className="relative w-5 h-5 text-gold-500/60 group-hover:text-gold-400 group-hover:translate-x-1 transition-all duration-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </button>
+
+              <p className="text-cream-200/30 text-[10px] tracking-widest uppercase font-extralight">
+                Menú · Cortes · Coctelería · Vinos
+              </p>
+            </div>
           </div>
         </div>
       </section>
