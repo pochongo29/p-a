@@ -264,25 +264,23 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-stretch justify-center"
+      className="fixed inset-0 z-[100] bg-brand-black/[0.97] backdrop-blur-2xl"
       role="dialog"
       aria-modal="true"
       aria-label="Carta completa de PÚA Brasa y Vino"
     >
-      {/* Backdrop — pointer-events only on the actual backdrop area */}
-      <div
-        className="absolute inset-0 bg-brand-black/[0.97] backdrop-blur-2xl"
-        onClick={onClose}
-        aria-hidden="true"
-      />
-
-      {/* Panel */}
+      {/* Scroll container — ocupa toda la pantalla, elimina problemas de tap en backdrop */}
       <div
         ref={panelRef}
-        className="relative w-full max-w-5xl mx-auto overflow-y-auto bg-brand-black/80 border-x border-white/[0.03]"
-        style={{ overscrollBehavior: "contain", WebkitOverflowScrolling: "touch" } as React.CSSProperties}
-        onClick={(e) => e.stopPropagation()}
+        className="absolute inset-0 overflow-y-auto"
+        style={{
+          overscrollBehavior: "contain",
+          WebkitOverflowScrolling: "touch",
+          touchAction: "pan-y",
+        } as React.CSSProperties}
       >
+      {/* Contenido centrado */}
+      <div className="w-full max-w-5xl mx-auto min-h-full bg-brand-black/80 border-x border-white/[0.03]">
         {/* Sticky header — more refined */}
         <div className="sticky top-0 z-10 bg-brand-black/95 backdrop-blur-xl border-b border-white/[0.04] px-4 sm:px-6 md:px-16 py-4 md:py-6 flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -382,7 +380,8 @@ export function FullMenuModal({ onClose }: FullMenuModalProps) {
             </a>
           </div>
         </div>
-      </div>
+      </div>{/* fin contenido centrado */}
+      </div>{/* fin scroll container */}
     </div>
   );
 }
