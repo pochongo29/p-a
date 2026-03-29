@@ -12,10 +12,13 @@ const NAV_LINKS = [
 
 export function Navbar() {
   const navRef = useRef<HTMLElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,6 +51,31 @@ export function Navbar() {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
+
+  // Swipe-to-close: deslizar el drawer hacia la derecha lo cierra
+  useEffect(() => {
+    const drawer = drawerRef.current;
+    if (!drawer) return;
+
+    const onTouchStart = (e: TouchEvent) => {
+      touchStartX.current = e.touches[0].clientX;
+      touchStartY.current = e.touches[0].clientY;
+    };
+
+    const onTouchEnd = (e: TouchEvent) => {
+      const dx = e.changedTouches[0].clientX - touchStartX.current;
+      const dy = Math.abs(e.changedTouches[0].clientY - touchStartY.current);
+      // Swipe derecha > 60px y más horizontal que vertical
+      if (dx > 60 && dy < 80) close();
+    };
+
+    drawer.addEventListener("touchstart", onTouchStart, { passive: true });
+    drawer.addEventListener("touchend", onTouchEnd, { passive: true });
+    return () => {
+      drawer.removeEventListener("touchstart", onTouchStart);
+      drawer.removeEventListener("touchend", onTouchEnd);
+    };
+  }, []);
 
   const close = () => setMobileOpen(false);
 
@@ -128,7 +156,9 @@ export function Navbar() {
       />
 
       {/* Drawer panel */}
-      <div className={`fixed top-0 right-0 bottom-0 z-[58] w-[78vw] max-w-[320px] md:hidden
+      <div
+        ref={drawerRef}
+        className={`fixed top-0 right-0 bottom-0 z-[58] w-[78vw] max-w-[320px] md:hidden
         bg-brand-charcoal flex flex-col
         border-l border-gold-500/10
         transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
