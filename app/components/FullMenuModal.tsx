@@ -1,8 +1,16 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { RatingStars } from "./RatingStars";
+import type { DishViewer3DProps } from "./DishViewer3D";
+
+// Dynamic import to keep Three.js out of the main bundle (heavy ~1MB)
+const DishViewer3D = dynamic<DishViewer3DProps>(
+  () => import("./DishViewer3D").then((m) => ({ default: m.DishViewer3D })),
+  { ssr: false, loading: () => null }
+);
 
 /* ═══════════════════════════════════════════════
    FULL MENU MODAL — 4 tabs con imágenes
@@ -488,43 +496,68 @@ const TAB_DATA: Record<TabId, Section[]> = {
 
 // ─── ITEM CARD ───────────────────────────────────
 
-function ItemCard({ item }: { item: Item }) {
+function ItemCard({ item, sectionCategory }: { item: Item; sectionCategory: string }) {
+  const [viewer3DOpen, setViewer3DOpen] = useState(false);
+
   return (
-    <div className="group flex flex-col border-b border-white/[0.03] pb-8 hover:border-gold-500/10 transition-colors duration-700">
-      {/* Imagen */}
-      <div className="relative w-full aspect-[16/10] overflow-hidden mb-4 flex-shrink-0">
-        <Image
-          src={item.image}
-          alt={item.name}
-          fill
-          loading="lazy"
-          className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
-        {/* Overlay sutil */}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-black/50 via-transparent to-transparent" />
-        {/* Tag sobre imagen */}
-        {item.tag && (
-          <span className="absolute bottom-3 left-3 text-[8px] tracking-widest-xl uppercase text-gold-400/95 bg-brand-black/70 backdrop-blur-sm px-2.5 py-1 font-light border border-gold-500/10">
-            {item.tag}
+    <>
+      <div className="group flex flex-col border-b border-white/[0.03] pb-8 hover:border-gold-500/10 transition-colors duration-700">
+        {/* Image with 3D button */}
+        <div className="relative w-full aspect-[16/10] overflow-hidden mb-4 flex-shrink-0">
+          <Image
+            src={item.image}
+            alt={item.name}
+            fill
+            loading="lazy"
+            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-black/50 via-transparent to-transparent" />
+          {item.tag && (
+            <span className="absolute bottom-3 left-3 text-[8px] tracking-widest-xl uppercase text-gold-400/95 bg-brand-black/70 backdrop-blur-sm px-2.5 py-1 font-light border border-gold-500/10">
+              {item.tag}
+            </span>
+          )}
+          {/* 3D button */}
+          <button
+            onClick={() => setViewer3DOpen(true)}
+            aria-label={`Ver ${item.name} en 3D`}
+            className="absolute top-3 right-3 flex items-center gap-1.5 bg-brand-black/65 backdrop-blur-sm border border-gold-500/25 px-2.5 py-1.5 opacity-0 group-hover:opacity-100 md:opacity-60 md:group-hover:opacity-100 transition-opacity duration-300 hover:border-gold-500/60 touch-manipulation"
+          >
+            <svg className="w-3 h-3 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+            </svg>
+            <span className="text-[8px] tracking-widest text-gold-400/90 uppercase font-light">3D</span>
+          </button>
+        </div>
+
+        {/* Text content */}
+        <div className="flex items-start justify-between gap-3 mb-1.5">
+          <h4 className="font-serif text-base md:text-lg text-cream-100/95 group-hover:text-gold-400/92 transition-colors duration-500 leading-snug font-light">
+            {item.name}
+          </h4>
+          <span className="shimmer-gold font-serif text-base font-light leading-none flex-shrink-0 mt-0.5">
+            {item.price}
           </span>
-        )}
+        </div>
+        <RatingStars dishId={item.name} />
+        <p className="text-cream-300/75 text-sm font-extralight leading-[1.8]">
+          {item.description}
+        </p>
       </div>
 
-      {/* Contenido */}
-      <div className="flex items-start justify-between gap-3 mb-1.5">
-        <h4 className="font-serif text-base md:text-lg text-cream-100/95 group-hover:text-gold-400/92 transition-colors duration-500 leading-snug font-light">
-          {item.name}
-        </h4>
-        <span className="shimmer-gold font-serif text-base font-light leading-none flex-shrink-0 mt-0.5">
-          {item.price}
-        </span>
-      </div>
-      <RatingStars dishId={item.name} />
-      <p className="text-cream-300/75 text-sm font-extralight leading-[1.8]">
-        {item.description}
-      </p>
-    </div>
+      {/* 3D Viewer overlay */}
+      {viewer3DOpen && (
+        <DishViewer3D
+          name={item.name}
+          description={item.description}
+          price={item.price}
+          category={sectionCategory}
+          tag={item.tag}
+          onClose={() => setViewer3DOpen(false)}
+        />
+      )}
+    </>
   );
 }
 
@@ -546,7 +579,7 @@ function MenuItems({ sections }: { sections: Section[] }) {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-2">
             {section.items.map((item) => (
-              <ItemCard key={item.name} item={item} />
+              <ItemCard key={item.name} item={item} sectionCategory={section.category} />
             ))}
           </div>
         </div>
